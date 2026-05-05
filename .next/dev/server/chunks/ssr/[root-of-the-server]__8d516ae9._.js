@@ -167,22 +167,26 @@ const FALLBACK = [
     {
         id: "p1",
         imageUrl: "/image 41.png",
-        alt: "Youths in classroom or training session"
+        alt: "Youths in classroom or training session",
+        title: "Program Title"
     },
     {
         id: "p2",
         imageUrl: "/image 42.png",
-        alt: "Students in uniform reading documents"
+        alt: "Students in uniform reading documents",
+        title: "Program Title"
     },
     {
         id: "p3",
         imageUrl: "/image 43.png",
-        alt: "Meeting or boardroom discussion"
+        alt: "Meeting or boardroom discussion",
+        title: "Program Title"
     },
     {
         id: "p4",
         imageUrl: "/image 44.png",
-        alt: "Director or official signing documents"
+        alt: "Director or official signing documents",
+        title: "Program Title"
     }
 ];
 function UpcomingPrograms({ programs }) {
@@ -201,16 +205,33 @@ function UpcomingPrograms({ programs }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "programs-grid",
                 children: items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "program-item",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                            src: item.imageUrl,
-                            alt: item.alt
-                        }, void 0, false, {
-                            fileName: "[project]/cltc7-main/components/UpcomingPrograms.tsx",
-                            lineNumber: 24,
-                            columnNumber: 13
-                        }, this)
-                    }, item.id, false, {
+                        className: "program-wrapper",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "program-item",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: item.imageUrl,
+                                    alt: item.alt
+                                }, void 0, false, {
+                                    fileName: "[project]/cltc7-main/components/UpcomingPrograms.tsx",
+                                    lineNumber: 25,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/cltc7-main/components/UpcomingPrograms.tsx",
+                                lineNumber: 24,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cltc7$2d$main$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "program-title",
+                                children: item.title ?? "Program Title"
+                            }, void 0, false, {
+                                fileName: "[project]/cltc7-main/components/UpcomingPrograms.tsx",
+                                lineNumber: 27,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, item.id, true, {
                         fileName: "[project]/cltc7-main/components/UpcomingPrograms.tsx",
                         lineNumber: 23,
                         columnNumber: 11

@@ -25,6 +25,19 @@
   margin: 0 auto;
 }
 
+.program-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.program-title {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #006400;
+  text-align: center;
+}
+
 .program-item {
   overflow: hidden;
   border-radius: 12px;

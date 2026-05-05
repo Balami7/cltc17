@@ -553,6 +553,19 @@ body {
   padding: 60px 40px;
 }
 
+.program-wrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+.program-title {
+  color: #006400;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 @media (max-width: 1024px) {
   .upcoming-programs {
     padding: 50px 30px;
