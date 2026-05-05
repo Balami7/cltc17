@@ -1,0 +1,218 @@
+
+h1 {
+  text-align: center;
+  color: #006400;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 30px;
+  position: relative;
+  margin-top: 50px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 5px;
+  background-color: #006400;
+  border-radius: 3px;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.alumni-search {
+  width: 70%;
+  max-width: 210px;
+  padding: 0.9rem 1.4rem;
+  border: 2px solid #d1d5db;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.alumni-search:focus {
+  border-color: #006400;
+  box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.12);
+}
+
+.alumni-search::placeholder {
+  color: #9ca3af;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #6b7280;
+  padding: 4rem 1rem;
+  font-weight: 500;
+}
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 32px 26px;
+  margin-bottom: 60px;
+}
+
+.alumni-card {
+  text-align: center;
+}
+
+.alumni-grid:has(.alumni-card:only-child) {
+  justify-content: center;
+}
+
+.alumni-grid:has(.alumni-card:only-child) .alumni-card {
+  margin: 0 auto;
+}
+
+.alumni-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid white;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+  transition: all 0.32s ease;
+  margin-bottom: 1.1rem;
+}
+
+.alumni-card:hover .alumni-photo {
+  transform: scale(1.05);
+  box-shadow: 0 14px 36px rgba(40,167,69,0.28);
+}
+
+.alumni-name {
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.alumni-batch {
+  font-size: 0.96rem;
+  color: #6c757d;
+}
+
+.section-divider {
+  border: none;
+  border-top: 3px solid #0056b3; 
+  width: 90%;
+  margin: 50px auto; 
+}
+
+
+
+.registration-section {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.1);
+  margin-bottom: 100px;
+}
+
+.form-heading {
+  color: #006400;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.form-group1 {
+  margin-bottom: 1.8rem; 
+  text-align: left;
+}
+.form-group {
+  margin-bottom: 1.8rem; 
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 16px 18px;          
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  padding-left: 70px;
+  padding-right: 70px;           
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,0.18);
+}
+
+
+.submit-btn1 {
+  background: #28a745;
+  color: white;
+  border: none;
+  width: auto;
+  padding: 10px;                
+  font-size: 1.25rem;           
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.submit-btn1:hover {
+  background: #1e7e34;
+}
+
+
+.success-message {
+  background: #ecffe6;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.success-message h3 {
+  color: #006400;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.success-message p {
+  color: #333;
+  font-size: 1.15rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .alumni-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+  }
+  .registration-section {
+    padding: 32px 24px;
+  }
+}
+
+  

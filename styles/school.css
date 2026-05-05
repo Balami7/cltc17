@@ -1,0 +1,101 @@
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 70px;
+}
+
+.courses-header h1,
+.courses-header h2 {
+  font-size: 48px;                   
+  font-weight: 700;
+  color: #006400;                    
+  margin: 0;
+  text-transform: uppercase;         
+  position: relative;                
+  display: inline-block;             
+  padding-bottom: 12px;              
+}
+
+
+.courses-header h1::after,
+.courses-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;                      
+  height: 4px;                       
+  background-color: #006400;         
+  border-radius: 2px;
+}
+
+.schools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+
+
+.school-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent; 
+}
+
+
+.school-card:hover {
+  transform: translateY(-8px);           
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 2px solid #006400;             
+}
+
+
+.school-card:hover {
+  border-color: #006400;
+}
+
+
+.school-card h3 {
+  font-size: 22px;
+  color: #006400;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.school-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .schools-grid {
+    grid-template-columns: repeat(2, 1fr);  
+  }
+}
+
+@media (max-width: 576px) {
+  .schools-grid {
+    grid-template-columns: 1fr;  
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}

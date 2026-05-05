@@ -1,0 +1,87 @@
+.procurement-section {
+    background: #ffffff;
+    padding: 5rem 5% 6rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-heading-wrapper {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-heading {
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: #006400;
+    margin: 0 auto 0.8rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.8rem;
+  }
+
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #006400;
+    border-radius: 2px;
+  }
+
+  .tender-content {
+    background: #f9f9f9;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .tender-title {
+    font-size: 1.35rem;
+    color: #006400;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .tender-intro {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .lots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .lot-item {
+    background: white;
+    padding: 1.2rem 1.4rem;
+    border-radius: 8px;
+    border-left: 4px solid #006400;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .lot-item strong {
+    color: #006400;
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .tender-content {
+      padding: 1.8rem;
+    }
+    .lots-grid {
+      grid-template-columns: 1fr;
+    }
+  }

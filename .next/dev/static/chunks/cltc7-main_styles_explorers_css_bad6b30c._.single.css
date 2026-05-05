@@ -1,0 +1,168 @@
+/* [project]/cltc7-main/styles/explorers.css [app-client] (css) */
+.explorer-magazine {
+  background: #f8f9fa;
+  padding: 64px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.main-title {
+  text-align: center;
+  color: #006400;
+  letter-spacing: -.02em;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-title:after {
+  content: "";
+  background: #006400;
+  border-radius: 3px;
+  width: 140px;
+  height: 6px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  display: grid;
+}
+
+.section {
+  flex-direction: column;
+  display: flex;
+}
+
+.section-title {
+  color: #006400;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: #fff;
+  border-left: 5px solid #0a9c0a;
+  margin-bottom: 1.5rem;
+  padding-left: .8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  flex-direction: column;
+  height: 100%;
+  transition: all .35s;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 8px 28px #0000001a;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 48px #0000002e;
+}
+
+.card-image {
+  object-fit: cover;
+  background: #ecfdf5;
+  width: 100%;
+  height: 200px;
+}
+
+.card-body {
+  flex-direction: column;
+  flex: 1;
+  padding: 1.2rem 1.4rem 1.8rem;
+  display: flex;
+}
+
+.card-title {
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-text {
+  color: #000;
+  flex: 1;
+  margin-bottom: 1.8rem;
+  line-height: 1.65;
+}
+
+.card-footer {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.2rem;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  background: #0a9c0a;
+  border: none;
+  border-radius: 12px;
+  padding: .7rem 1.8rem;
+  font-size: .95rem;
+  font-weight: 600;
+  transition: all .3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #059669;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #10b9814d;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .grid {
+    gap: 1.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+}
+
+/*# sourceMappingURL=cltc7-main_styles_explorers_css_bad6b30c._.single.css.map*/

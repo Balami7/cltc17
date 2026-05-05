@@ -1,0 +1,123 @@
+/* [project]/cltc7-main/styles/magazine.css [app-client] (css) */
+body {
+  color: #333;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.page-wrapper {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 64px;
+}
+
+.section {
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 64px auto;
+  padding: 40px;
+  box-shadow: 0 4px 12px #00000014;
+}
+
+.section-title {
+  color: #006400;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 2.1rem;
+}
+
+.achievements h3, .ai-ethics h3 {
+  color: #006400;
+  margin-top: 0;
+}
+
+.key-highlights {
+  padding-left: 28px;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+
+.staff-month {
+  text-align: center;
+}
+
+.current-staff {
+  margin: 32px 0;
+}
+
+.staff-month img, .birthdays img {
+  border-radius: 12px;
+  width: 220px;
+  height: auto;
+  margin: 16px 0;
+  box-shadow: 0 4px 10px #0000001a;
+}
+
+.previous-winners, .upcoming-birthdays {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  display: flex;
+}
+
+.previous-winner, .upcoming-birthday {
+  text-align: center;
+  min-width: 140px;
+}
+
+.previous-winner img, .upcoming-birthday img {
+  border: 3px solid #eee;
+  border-radius: 12px;
+  width: 120px;
+  height: auto;
+}
+
+.birthdays {
+  text-align: center;
+}
+
+.current-birthday {
+  margin: 40px 0;
+}
+
+h4 {
+  color: #333;
+  margin: 8px 0 4px;
+}
+
+p {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .page-wrapper {
+    padding: 64px 24px;
+  }
+
+  .section {
+    margin: 48px auto;
+    padding: 32px;
+  }
+
+  .staff-month img, .birthdays img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 64px 16px;
+  }
+
+  .section {
+    padding: 24px;
+  }
+}
+
+/*# sourceMappingURL=cltc7-main_styles_magazine_css_bad6b30c._.single.css.map*/

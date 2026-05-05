@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Main content wrapper with generous side padding */
+.page-wrapper {
+  padding: 64px 64px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 64px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  color: #006400;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 2.1rem;
+}
+
+.achievements h3,
+.ai-ethics h3 {
+  color: #006400;
+  margin-top: 0;
+}
+
+.key-highlights {
+  list-style-type: disc;
+  padding-left: 28px;
+  line-height: 1.6;
+}
+
+/* Staff of the Month */
+.staff-month {
+  text-align: center;
+}
+
+.current-staff {
+  margin: 32px 0;
+}
+
+.staff-month img,
+.birthdays img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;              /* no oval */
+  margin: 16px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.previous-winners,
+.upcoming-birthdays {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.previous-winner,
+.upcoming-birthday {
+  text-align: center;
+  min-width: 140px;
+}
+
+.previous-winner img,
+.upcoming-birthday img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;              /* no oval */
+  border: 3px solid #eee;
+}
+
+/* Birthdays section */
+.birthdays {
+  text-align: center;
+}
+
+.current-birthday {
+  margin: 40px 0;
+}
+
+h4 {
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+  .page-wrapper {
+    padding: 64px 24px;
+  }
+
+  .section {
+    margin: 48px auto;
+    padding: 32px;
+  }
+
+  .staff-month img,
+  .birthdays img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 64px 16px;
+  }
+
+  .section {
+    padding: 24px;
+  }
+}

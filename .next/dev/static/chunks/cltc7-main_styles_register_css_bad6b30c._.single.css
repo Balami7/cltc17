@@ -1,0 +1,72 @@
+/* [project]/cltc7-main/styles/register.css [app-client] (css) */
+.containerr {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 680px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #00000014;
+}
+
+.form-content {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+label {
+  color: #006400;
+  margin-bottom: .5rem;
+  font-size: .95rem;
+  font-weight: 500;
+  display: block;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+  padding: .85rem 1rem;
+  font-size: 1rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus, select:focus {
+  border-color: #006400;
+  outline: none;
+  box-shadow: 0 0 0 3px #00640026;
+}
+
+.submit-btn {
+  color: #fff;
+  cursor: pointer;
+  background: #006400;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all .25s;
+  display: block;
+}
+
+.submit-btn:hover {
+  background: #059669;
+}
+
+@media (max-width: 480px) {
+  .form-content {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/*# sourceMappingURL=cltc7-main_styles_register_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,97 @@
+/* [project]/cltc7-main/styles/about.css [app-client] (css) */
+:root {
+  --green: #00853e;
+  --green-dark: #006d32;
+  --text-light: #f0f9f4;
+  --text-muted: #d4ece0;
+}
+
+.about-section {
+  background: var(--green);
+  color: var(--text-light);
+  place-items: center;
+  min-height: 100vh;
+  padding: 5rem 1.5rem;
+  display: grid;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#aboutt, h2 {
+  color: #fff;
+  letter-spacing: -.02em;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+#aboutt {
+  text-align: center;
+  text-shadow: 0 3px 12px #0000004d;
+  margin-bottom: 3rem;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+}
+
+#aboutt:after {
+  content: "";
+  background: #fff;
+  border-radius: 2px;
+  width: 80px;
+  height: 4px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+h2 {
+  padding-bottom: .6rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  display: inline-block;
+  position: relative;
+}
+
+h2:after {
+  content: "";
+  background: #fff;
+  border-radius: 2px;
+  width: 80px;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.content {
+  opacity: .98;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+}
+
+.content p {
+  margin-bottom: 1.4rem;
+}
+
+.highlight {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 4rem 1.2rem;
+  }
+
+  h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    font-size: 1.05rem;
+  }
+}
+
+/*# sourceMappingURL=cltc7-main_styles_about_css_bad6b30c._.single.css.map*/
