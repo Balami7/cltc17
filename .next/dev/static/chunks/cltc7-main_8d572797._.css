@@ -1655,7 +1655,7 @@ main {
 }
 
 .about-section {
-  background: var(--green);
+  background: var(--text-light);
   color: var(--text-light);
   place-items: center;
   min-height: 100vh;
@@ -1670,7 +1670,7 @@ main {
 }
 
 #aboutt, h2 {
-  color: #fff;
+  color: #000;
   letter-spacing: -.02em;
   margin-bottom: 1.2rem;
   font-weight: 700;
@@ -1685,7 +1685,7 @@ main {
 
 #aboutt:after {
   content: "";
-  background: #fff;
+  background: #000;
   border-radius: 2px;
   width: 80px;
   height: 4px;
@@ -1703,7 +1703,7 @@ h2 {
 
 h2:after {
   content: "";
-  background: #fff;
+  background: #000;
   border-radius: 2px;
   width: 80px;
   height: 4px;
@@ -1720,11 +1720,12 @@ h2:after {
 }
 
 .content p {
+  color: #000;
   margin-bottom: 1.4rem;
 }
 
 .highlight {
-  color: #fff;
+  color: #000;
   font-weight: 600;
 }
 
@@ -2708,7 +2709,7 @@ input:focus, select:focus {
 }
 
 .about-section {
-  background: var(--green);
+  background: var(--text-light);
   color: var(--text-light);
   place-items: center;
   min-height: 100vh;
@@ -2723,7 +2724,7 @@ input:focus, select:focus {
 }
 
 #aboutt, h2 {
-  color: #fff;
+  color: #000;
   letter-spacing: -.02em;
   margin-bottom: 1.2rem;
   font-weight: 700;
@@ -2738,7 +2739,7 @@ input:focus, select:focus {
 
 #aboutt:after {
   content: "";
-  background: #fff;
+  background: #000;
   border-radius: 2px;
   width: 80px;
   height: 4px;
@@ -2756,7 +2757,7 @@ h2 {
 
 h2:after {
   content: "";
-  background: #fff;
+  background: #000;
   border-radius: 2px;
   width: 80px;
   height: 4px;
@@ -2773,11 +2774,12 @@ h2:after {
 }
 
 .content p {
+  color: #000;
   margin-bottom: 1.4rem;
 }
 
 .highlight {
-  color: #fff;
+  color: #000;
   font-weight: 600;
 }
 
