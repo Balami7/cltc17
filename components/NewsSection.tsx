@@ -13,7 +13,7 @@ const FALLBACK = [
     id: "n1",
     title: "Youth Ministry Launches Enterprise Content Management System to Fully Transition to Paperless Operations",
     description: "FEDERAL MINISTRY OF YOUTH DEVELOPMENT INFORMATION AND PUBLIC RELATIONS DEPARTMENT",
-    imageUrl: "/image 4.png",
+    imageUrl: " ",
     badge: "NEWS",
   },
   
@@ -22,7 +22,7 @@ const FALLBACK = [
     id: "n2",
     title: "Permanent Secretary Visits CLTC Headquarters to Strengthen Youth Leadership Development",
     description: "PERMANENT SECRETARY VISITS CLTC HEADQUARTERS TO STRENGTHEN YOUTH LEADERSHIP DEVELOPMENT",
-    imageUrl: "/image 4.png",
+    imageUrl: " ",
     badge: "NEWS",
   },
 
@@ -31,7 +31,7 @@ const FALLBACK = [
     id: "n3",
     title: "Youth Ministry Launches Enterprise Content Management System to Fully Transition to Paperless Operations",
     description: "FEDERAL MINISTRY OF YOUTH DEVELOPMENT INFORMATION AND PUBLIC RELATIONS DEPARTMENT",
-    imageUrl: "/image 4.png",
+    imageUrl: " ",
     badge: "NEWS",
   },
   
@@ -40,7 +40,7 @@ const FALLBACK = [
     id: "n4",
     title: "Permanent Secretary Visits CLTC Headquarters to Strengthen Youth Leadership Development",
     description: "PERMANENT SECRETARY VISITS CLTC HEADQUARTERS TO STRENGTHEN YOUTH LEADERSHIP DEVELOPMENT",
-    imageUrl: "/image 4.png",
+    imageUrl: " ",
     badge: "NEWS",
   },
   
