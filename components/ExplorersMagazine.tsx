@@ -7,7 +7,7 @@ export default function ExplorerMagazine() {
       title: "Achievements",
       items: [
         {
-          image: "/image 4.png",
+          image: " ",
           alt: "Outstanding Performance",
           title: "Outstanding Performance",
           text: "Celebrating record-breaking results and team milestones this quarter.",
@@ -18,7 +18,7 @@ export default function ExplorerMagazine() {
       title: "Research",
       items: [
         {
-          image: "/image 4.png",
+          image: " ",
           alt: "AI Ethics Framework",
           title: "AI Ethics Framework",
           text: "Latest publication exploring responsible AI development and deployment.",
@@ -29,7 +29,7 @@ export default function ExplorerMagazine() {
       title: "Birthdays",
       items: [
         {
-          image: "/image 4.png",
+          image: " ",
           alt: "March Celebrations",
           title: "March Celebrations",
           text: "Warm wishes to our colleagues celebrating birthdays this month.",
@@ -40,7 +40,7 @@ export default function ExplorerMagazine() {
       title: "Staff of the Month",
       items: [
         {
-          image: "/image 4.png",
+          image: " ",
           alt: "Aisha Mohammed",
           title: "Aisha Mohammed",
           text: "Recognized for outstanding leadership and innovative contributions.",
