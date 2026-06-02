@@ -29,7 +29,7 @@ export default function ExplorerMagazine() {
       title: "Birthdays",
       items: [
         {
-          image: " ",
+          image: "sil.jpeg",
           alt: "March Celebrations",
           title: "March Celebrations",
           text: "Warm wishes to our colleagues celebrating birthdays this month.",
@@ -40,7 +40,7 @@ export default function ExplorerMagazine() {
       title: "Staff of the Month",
       items: [
         {
-          image: " ",
+          image: "sil.jpeg",
           alt: "Aisha Mohammed",
           title: "Aisha Mohammed",
           text: "Recognized for outstanding leadership and innovative contributions.",
