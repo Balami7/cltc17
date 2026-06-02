@@ -7,7 +7,7 @@ export default function ExplorerMagazine() {
       title: "Achievements",
       items: [
         {
-          image: " ",
+          image: "gal.jpg",
           alt: "Outstanding Performance",
           title: "Outstanding Performance",
           text: "Celebrating record-breaking results and team milestones this quarter.",
@@ -18,7 +18,7 @@ export default function ExplorerMagazine() {
       title: "Research",
       items: [
         {
-          image: " ",
+          image: "gal.jpg",
           alt: "AI Ethics Framework",
           title: "AI Ethics Framework",
           text: "Latest publication exploring responsible AI development and deployment.",
