@@ -8,18 +8,18 @@ export default function AlumniPage() {
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   const alumni = [
-    { name: "Aisha Mohammed", photo: " " },
-    { name: "Chinedu Okeke", photo: " " },
-    { name: "Fatima Yusuf", photo: " " },
-    { name: "Tunde Adebayo", photo: " " },
-    { name: "Ngozi Eze", photo: " " },
-    { name: "Ibrahim Sani", photo: " " },
-    { name: "Blessing Okafor", photo: " " },
-    { name: "Emeka Nwosu", photo: " " },
-    { name: "Hauwa Ali", photo: " " },
-    { name: "Yusuf Bello", photo: " " },
-    { name: "Chioma Okonkwo", photo: " " },
-    { name: "Abdullahi Musa", photo: " " },
+    { name: "Aisha Mohammed", photo: "sil.jpeg" },
+    { name: "Chinedu Okeke", photo: "sil.jpeg" },
+    { name: "Fatima Yusuf", photo: "sil.jpeg" },
+    { name: "Tunde Adebayo", photo: "sil.jpeg" },
+    { name: "Ngozi Eze", photo: "sil.jpeg" },
+    { name: "Ibrahim Sani", photo: "sil.jpeg" },
+    { name: "Blessing Okafor", photo: "sil.jpeg" },
+    { name: "Emeka Nwosu", photo: "sil.jpeg" },
+    { name: "Hauwa Ali", photo: "sil.jpeg" },
+    { name: "Yusuf Bello", photo: "sil.jpeg" },
+    { name: "Chioma Okonkwo", photo: "sil.jpeg" },
+    { name: "Abdullahi Musa", photo: "sil.jpeg" },
   ];
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
