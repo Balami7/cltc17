@@ -1,0 +1,122 @@
+/* Core viewport container wrapper positioning */
+.container {
+  min-height: calc(100vh - 130px); /* Offsets height of dual-tier header layout */
+  background-color: #f4f7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Centralized focus card system */
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid #006400; /* Matches your header brand theme green color */
+  text-align: left;
+}
+
+/* Category context badge */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #006400;
+  background-color: rgba(0, 100, 0, 0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+/* Main title styling */
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Clean structural break rule */
+.divider {
+  width: 50px;
+  height: 3px;
+  background-color: blue; /* Matches your main header line separator color */
+  margin: 20px 0 32px 0; /* Expanded bottom margin to offset missing text block */
+  border-radius: 2px;
+}
+
+/* Lower button layout configurations */
+.actionGrid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  background-color: #006400;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background-color: #004d00;
+}
+
+.secondaryBtn {
+  background: none;
+  color: #006400;
+  border: 2px solid #006400;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(0, 100, 0, 0.05);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 600px) {
+  .card {
+    padding: 24px;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .actionGrid {
+    flex-direction: column;
+  }
+  
+  .primaryBtn, 
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
