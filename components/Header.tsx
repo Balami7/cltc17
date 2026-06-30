@@ -18,10 +18,11 @@ const TOP_LINKS = [
 
 // Centered links for the second row
 const SUB_LINKS = [
-  { href: "/sublink1", label: "NEW LINK 1" },
-  { href: "/sublink2", label: "NEW LINK 2" },
-  { href: "/sublink3", label: "NEW LINK 3" },
+  { href: "https://youthdev.gov.ng", label: "FMYD", target: "_blank" },
+  { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" },
+  { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" }
 ];
+
 
 export default function Header() {
   const pathname = usePathname();
