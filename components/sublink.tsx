@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import styles from "./sublink.module.css";
+import styles from "./sublink.css";
 
 // TypeScript props for App Router dynamic segments
 interface PageProps {
