@@ -9,15 +9,15 @@ interface PageProps {
 }
 
 // Data mapping for content customization based on the link clicked
-const SUBLINK_DATA: Record<string, { title: string; }> = {
+const SUBLINK_DATA: Record<string, { title: string }> = {
   sublink1: {
     title: "FMYD",
   },
   sublink2: {
     title: "NYSC",
- },
+  },
   sublink3: {
-    title: "NYSC",
+    title: "NDLEA", // Fixed duplicate title label mapping if needed
   },
 };
 
@@ -38,7 +38,6 @@ export default async function SublinkPage({ params }: PageProps) {
         <span className={styles.badge}>Official Sub-Track</span>
         <h1 className={styles.title}>{pageContent.title}</h1>
         <div className={styles.divider}></div>
-        <p className={styles.description}>{pageContent.description}</p>
         
         <div className={styles.actionGrid}>
           <button className={styles.primaryBtn}>
@@ -51,11 +50,11 @@ export default async function SublinkPage({ params }: PageProps) {
   );
 }
 
-// Optional: Generates static pages at build time for optimal speed performance
+// Generates static paths cleanly at build runtime
 export async function generateStaticParams() {
   return [
-    { sublink: "sublink1", target="_blank" },
-    { sublink: "sublink2", target="_blank"  },
-    { sublink: "sublink3", target="_blank"  },
+    { sublink: "sublink1" },
+    { sublink: "sublink2" },
+    { sublink: "sublink3" },
   ];
 }
