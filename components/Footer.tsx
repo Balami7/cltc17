@@ -43,7 +43,6 @@ export default function Footer() {
             </div>
             <div className="email">
               <i className="fa-solid fa-envelope"></i>
-              cltcnigeria@gmail.com<br />
               info@cltc.gov.ng
             </div>
           </div>
@@ -57,7 +56,6 @@ export default function Footer() {
             <li><a href="#">TRAINING SCHOOLS</a></li>
             <li><a href="#">NEWS & MEDIA</a></li>
             <li><a href="#">PROCUREMENT</a></li>
-            <li><a href="#">CONTACT US</a></li>
           </ul>
         </div>
 
@@ -70,8 +68,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <p>Copyright © 2026 CLTC | Powered by CLTC.</p>
+      <div className="footer-bottom"> 
+        <p>Copyright © {new Date().getFullYear()} CLTC | Powered by CLTC.</p> 
       </div>
     </footer>
   );
