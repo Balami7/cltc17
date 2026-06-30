@@ -18,7 +18,7 @@ const TOP_LINKS = [
 
 // Centered links for the second row
 const SUB_LINKS = [
-  { href: "https://youthdev.gov.ng", label: "FMYD", target: "_blank" },
+  { href: "https://fmyd.gov.ng", label: "FMYD", target: "_blank" },
   { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" },
   { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" }
 ];
