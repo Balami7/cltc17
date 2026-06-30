@@ -15,6 +15,8 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   border-bottom: 3px solid blue;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Row 1 Structural Formatting */
@@ -24,6 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo-area {
@@ -32,7 +35,6 @@ body {
   gap: 12px;
 }
 
-/* Handled via Next.js <Image /> component wrappers safely */
 .logo-area img {
   height: auto;
   width: auto;
@@ -89,13 +91,13 @@ body {
   padding: 8px 12px;
 }
 
-/* Row 2 Structural Formatting (Centered Links Line) */
+/* Row 2 Structural Formatting (Aligns left and hugs the text width) */
 .header-sub-row {
-  background-color: rgba(0, 0, 0, 0.12); /* Slightly darkened panel */
-  padding: 10px 40px;
-  display: flex;
-  justify-content: center; /* This explicitly centers the sub-links row */
-  align-items: center;
+  display: inline-flex; 
+  align-self: flex-start; /* Keeps the container on the left */
+  background-color: rgba(0, 0, 0, 0.15); /* Tint background matching link width */
+  padding: 10px 40px; /* Aligns left edge horizontally with Row 1 padding */
+  border-bottom-right-radius: 6px; /* Smooth aesthetic finish for the cut-off boundary */
 }
 
 /* Row 2 Links Configuration */
