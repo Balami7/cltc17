@@ -49,7 +49,8 @@
     h2 {
       font-size: clamp(1.8rem, 4.5vw, 2.6rem);
       position: relative;
-      display: inline-block;
+        display: block;        
+      text-align: center;    
       padding-bottom: 0.6rem;
     }
 
@@ -57,7 +58,8 @@
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
+        left: 50%;             /* 3. Shifts left edge to the exact middle */
+  transform: translateX(-50%); 
       width: 80px;
       height: 4px;
       background: black;
