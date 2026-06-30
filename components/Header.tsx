@@ -16,13 +16,12 @@ const TOP_LINKS = [
   { href: "/alumni", label: "ALUMNI" },
 ];
 
-// Centered links for the second row
+// Content links for the second row
 const SUB_LINKS = [
-  { href: "https://fmyd.gov.ng", label: "FMYD", target: "_blank" },
-  { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" },
-  { href: "https://www.nysc.gov.ng", label: "NYSC", target: "_blank" }
+  { href: "/sublink1", label: "NEW LINK 1" },
+  { href: "/sublink2", label: "NEW LINK 2" },
+  { href: "/sublink3", label: "NEW LINK 3" },
 ];
-
 
 export default function Header() {
   const pathname = usePathname();
@@ -74,7 +73,7 @@ export default function Header() {
           </button>
         </header>
 
-        {/* ROW 2: Completely Centered Link Line (Hidden on mobile displays) */}
+        {/* ROW 2: Aligned Left, Fits Content Width (Hidden on mobile displays) */}
         <div className="header-sub-row">
           <nav className="sub-nav-menu">
             {SUB_LINKS.map((link) => (
