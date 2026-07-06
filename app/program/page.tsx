@@ -43,7 +43,7 @@ export default function ProgramEventsPage() {
     <main>
       <div className="container">
         <div className="events-header">
-          <h1>Program & Events</h1>
+          <h1>Programmes & Events</h1>
         </div>
 
         <div className="events-grid">
