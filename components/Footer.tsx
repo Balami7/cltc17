@@ -8,13 +8,13 @@ export default function Footer() {
             alt="Citizenship and Leadership Training Centre Logo"
             className="footer-logo-img"
           />
-          <div className="social-icons">
+          {/*<div className="social-icons">
             <a href="#" className="social-link"><i className="fa-brands fa-x-twitter"></i></a>
             <a href="#" className="social-link"><i className="fa-brands fa-linkedin"></i></a>
             <a href="#" className="social-link"><i className="fa-brands fa-facebook"></i></a>
             <a href="#" className="social-link"><i className="fa-brands fa-instagram"></i></a>
             <a href="#" className="social-link"><i className="fa-brands fa-youtube"></i></a>
-          </div>
+          </div>*/}
         </div>
 
         <div className="footer-column contact-column">
@@ -36,10 +36,8 @@ export default function Footer() {
             </div>
             <div className="phone">
               <i className="fa-solid fa-phone"></i>
-              +234-803-320-4064<br />
-              +234-803-300-289<br />
-              +234-803-631-7224<br />
-              +234-803-667-3841
+              0705 743 0891 <br />
+              0803 451 1807
             </div>
             <div className="email">
               <i className="fa-solid fa-envelope"></i>
