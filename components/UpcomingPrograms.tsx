@@ -16,7 +16,7 @@ export default function UpcomingPrograms({ programs }: Props) {
 
   return (
     <section className="upcoming-programs">
-      <div className="section-title">UPCOMING PROGRAMS</div>
+      <div className="section-title">UPCOMING PROGRAMMES</div>
 
       <div className="programs-grid">
         {items.map((item) => (
