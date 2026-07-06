@@ -50,6 +50,7 @@ export default function CoursesSection({ courses = [] }: CoursesSectionProps) {
       <div className="courses-tabs">
         <button className="tab active">Popular Courses</button>
         <a href="#" className="all-courses-link">All Courses</a>
+        <a href="#" className="all-courses-link">Online Courses</a>
       </div>
 
       <div className="courses-grid">
