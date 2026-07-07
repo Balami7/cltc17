@@ -14,7 +14,7 @@ export default function AboutPage() {
 
           <div className="content">
             <p>
-              The Citizenship and Leadership Training Centre (CLTC) is a Federal Government parastatal under the <a href="https://fmyd.gov.ng" target="_blank">Federal Ministry of Youth Developmen</a>, established to promote citizenship education, leadership development, civic responsibility and national values among Nigerians.
+              The Citizenship and Leadership Training Centre (CLTC) is a Federal Government parastatal under the <a href="https://fmyd.gov.ng" target="_blank">Federal Ministry of Youth Development</a>, established to promote citizenship education, leadership development, civic responsibility and national values among Nigerians.
             </p>
             <p>
               CLTC was established in 1951 and given legal status by an Act of Parliament published in the extraordinary Official Gazette No. 45 of August 10, 1960. This legal instrument was later modified and repealed by Decree No. 38, enacted in December 1989.
