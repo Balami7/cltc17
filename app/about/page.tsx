@@ -14,7 +14,7 @@ export default function AboutPage() {
 
           <div className="content">
             <p>
-              The Citizenship and Leadership Training Centre (CLTC) is a Federal Government parastatal under the Federal Ministry of Youth Development, established to promote citizenship education, leadership development, civic responsibility and national values among Nigerians.
+              The Citizenship and Leadership Training Centre (CLTC) is a Federal Government parastatal under the <a href="https://fmyd.gov.ng">Federal Ministry of Youth Developmen</a> t, established to promote citizenship education, leadership development, civic responsibility and national values among Nigerians.
             </p>
             <p>
               CLTC was established in 1951 and given legal status by an Act of Parliament published in the extraordinary Official Gazette No. 45 of August 10, 1960. This legal instrument was later modified and repealed by Decree No. 38, enacted in December 1989.
@@ -26,7 +26,7 @@ export default function AboutPage() {
              Through structured training programmes, outdoor and experiential learning, civic education initiatives and leadership development courses, the Centre cultivates patriotism, discipline, volunteerism, teamwork, resilience and public service among young people and other segments of society.
             </p>
             <p>
-              The Centre also serves as the supervisory body of the Man O’ War Voluntary Organization, providing policy direction, institutional oversight and support for one of Nigeria’s foremost volunteer and citizenship development organizations.
+              The Centre also serves as the supervisory body of the <a href="https://www.manowarng.org">Man O’ War</a> Voluntary Organization, providing policy direction, institutional oversight and support for one of Nigeria’s foremost volunteer and citizenship development organizations.
             </p>
             <p>
               The Centre continues to partner with government institutions, educational establishments, development partners and civil society organizations to strengthen civic consciousness, nurture responsible leadership and empower citizens to contribute meaningfully to national development.
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="content">
             <p>
               To promote citizenship education, leadership development, patriotism and national values through training, advocacy and experiential learning that builds the capacity of Nigerians to become responsible citizens and leaders committed to national development. <br/>
-              To establish, supervise and strengthen the Man O’ War Voluntary Organization in promoting volunteerism, civic responsibility and community service. <br />
+              To establish, supervise and strengthen the <a href="https://www.manowarng.org">Man O’ War</a> Voluntary Organization in promoting volunteerism, civic responsibility and community service. <br />
               To conduct research into youth-related social issues and develop practical solutions that foster responsible citizenship and national development.
 
             </p>
