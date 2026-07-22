@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
 
             <div className="leader-card">
-              <img className="leader-img" src="" alt="Alhaji Danjuma Ochidi" />
+              <img className="leader-img" src="/8.jpeg" alt="Alhaji Danjuma Ochidi" />
               <div className="leader-info">
                 <h3 className="leader-name">Alhaji Danjuma Ochidi</h3>
                 <p className="leader-title">H.O.D Reform Services Coordination & Innovation Department (RSCID)</p>
@@ -121,6 +121,14 @@ export default function AboutPage() {
               <div className="leader-info">
                 <h3 className="leader-name">Alhaji Ibrahim Usman Furfuri</h3>
                 <p className="leader-title">H.O.D Human Resources</p>
+              </div>
+            </div>
+
+            <div className="leader-card">
+              <img className="leader-img" src="/5.jpeg" alt="Elijah Gbolade Adediran (MCPN)" />
+              <div className="leader-info">
+                <h3 className="leader-name">Elijah Gbolade Adediran (MCPN)</h3>
+                <p className="leader-title">H.O.D ICT</p>
               </div>
             </div>
 
