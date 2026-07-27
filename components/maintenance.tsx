@@ -1,5 +1,4 @@
 "use client";
-import React from 'react';
 
 // 1. Define inline style objects
 const styles = {
@@ -14,9 +13,9 @@ const styles = {
 
   track: {
     display: 'flex',
-    white-space: 'nowrap',
+    whiteSpace: 'nowrap',
     width: 'max-content',
-    animation: 'maintenance-marquee-loop 20s linear infinite', // Unique animation name
+    animation: 'maintenance-marquee-loop 20s linear infinite',
   } as React.CSSProperties,
 
   item: {
@@ -43,10 +42,9 @@ const styles = {
   } as React.CSSProperties,
 };
 
-const MaintenanceMarquee: React.FC = () => {
+const MaintenanceMarquee = () => {
   return (
     <>
-      {/* Scope the keyframes with a highly specific name so it never conflicts */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes maintenance-marquee-loop {
           0% { transform: translateX(0%); }
