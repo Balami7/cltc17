@@ -1,3 +1,4 @@
+import MaintenanceMarque from "@/components/maintenance"
 import Hero from "@/components/Hero";
 import EventsSlideshow from "@/components/EventsSlideshow";
 import UpcomingPrograms from "@/components/UpcomingPrograms";
@@ -20,6 +21,7 @@ export default async function Home() {
 
   return (
     <main>
+      <MaintenanceMarque/>
       <Hero />
       <hr className="section-divider" />
       <EventsSlideshow     events={events}     />
