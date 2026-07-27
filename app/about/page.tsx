@@ -125,10 +125,10 @@ export default function AboutPage() {
             </div>
 
             <div className="leader-card">
-              <img className="leader-img" src="/5.jpeg" alt="Elijah Gbolade Adediran (MCPN)" />
+              <img className="leader-img" src="/9.jpeg" alt="Ogechi Victoria Chisom-Adindu" />
               <div className="leader-info">
-                <h3 className="leader-name">Elijah Gbolade Adediran (MCPN)</h3>
-                <p className="leader-title">H.O.D ICT</p>
+                <h3 className="leader-name">Ogechi Victoria Chisom-Adindu</h3>
+                <p className="leader-title">H.O.D Finance and Account</p>
               </div>
             </div>
 
