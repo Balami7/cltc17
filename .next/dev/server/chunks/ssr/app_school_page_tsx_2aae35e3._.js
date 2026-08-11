@@ -51,149 +51,13 @@ const schools = [
     {
         id: 3,
         name: "Valley School",
-        location: "Owode Egba",
+        location: "Kaduna, Kaduna State",
         image: GALLERY_IMAGE,
         coordinator: {
-            name: "Mr. Babalola Yusuf Abiondum",
+            name: "Mr. John Doe",
             image: SILHOUETTE
         },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 4,
-        name: "Desert School",
-        location: "Fika, Yobe State",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Idris Malik",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 5,
-        name: "Highland School",
-        location: "Ngwo, Enugu State",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mrs. Maureen Okeiyi",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 6,
-        name: "Savannah Training School",
-        location: "Kudan, Zaria, Kaduna State",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Danladi Joseph Tunje",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 7,
-        name: "Sahel School",
-        location: "Kukai, Katsina State",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Anthony Arafan",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 8,
-        name: "Rockland School",
-        location: "Dutse",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Musa Abdullahi Ibrahim",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 9,
-        name: "Spring School",
-        location: "Ekiti State",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Oni Caleb",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 10,
-        name: "Mobile School",
-        location: "Nigeria",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Alex Akinnusi",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        gallery: [
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE,
-            GALLERY_IMAGE
-        ]
-    },
-    {
-        id: 11,
-        name: "Online School",
-        location: "Virtual",
-        image: GALLERY_IMAGE,
-        coordinator: {
-            name: "Mr. Akor Yakubu Gowon",
-            image: SILHOUETTE
-        },
-        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         gallery: [
             GALLERY_IMAGE,
             GALLERY_IMAGE,
@@ -252,12 +116,12 @@ function TrainingSchoolsPage() {
                             children: "Training Schools"
                         }, void 0, false, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 206,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/school/page.tsx",
-                        lineNumber: 205,
+                        lineNumber: 93,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -276,12 +140,12 @@ function TrainingSchoolsPage() {
                                             alt: school.name
                                         }, void 0, false, {
                                             fileName: "[project]/app/school/page.tsx",
-                                            lineNumber: 220,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/school/page.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -291,37 +155,37 @@ function TrainingSchoolsPage() {
                                                 children: school.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/school/page.tsx",
-                                                lineNumber: 223,
+                                                lineNumber: 111,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 children: school.location
                                             }, void 0, false, {
                                                 fileName: "[project]/app/school/page.tsx",
-                                                lineNumber: 224,
+                                                lineNumber: 112,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/school/page.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 110,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, school.id, true, {
                                 fileName: "[project]/app/school/page.tsx",
-                                lineNumber: 211,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/school/page.tsx",
-                        lineNumber: 209,
+                        lineNumber: 97,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/school/page.tsx",
-                lineNumber: 204,
+                lineNumber: 92,
                 columnNumber: 7
             }, this),
             selectedSchool && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -338,7 +202,7 @@ function TrainingSchoolsPage() {
                             children: "×"
                         }, void 0, false, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 235,
+                            lineNumber: 123,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -350,7 +214,7 @@ function TrainingSchoolsPage() {
                                     className: "coordinator-avatar"
                                 }, void 0, false, {
                                     fileName: "[project]/app/school/page.tsx",
-                                    lineNumber: 241,
+                                    lineNumber: 129,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -360,7 +224,7 @@ function TrainingSchoolsPage() {
                                             children: "School Coordinator"
                                         }, void 0, false, {
                                             fileName: "[project]/app/school/page.tsx",
-                                            lineNumber: 247,
+                                            lineNumber: 135,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -368,19 +232,19 @@ function TrainingSchoolsPage() {
                                             children: selectedSchool.coordinator.name
                                         }, void 0, false, {
                                             fileName: "[project]/app/school/page.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 136,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/school/page.tsx",
-                                    lineNumber: 246,
+                                    lineNumber: 134,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 240,
+                            lineNumber: 128,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -388,7 +252,7 @@ function TrainingSchoolsPage() {
                             children: selectedSchool.name
                         }, void 0, false, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 253,
+                            lineNumber: 141,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -399,7 +263,7 @@ function TrainingSchoolsPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 254,
+                            lineNumber: 142,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -409,20 +273,20 @@ function TrainingSchoolsPage() {
                                     children: "Overview"
                                 }, void 0, false, {
                                     fileName: "[project]/app/school/page.tsx",
-                                    lineNumber: 258,
+                                    lineNumber: 146,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: selectedSchool.overview
                                 }, void 0, false, {
                                     fileName: "[project]/app/school/page.tsx",
-                                    lineNumber: 259,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 257,
+                            lineNumber: 145,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -431,12 +295,12 @@ function TrainingSchoolsPage() {
                                 children: "Gallery"
                             }, void 0, false, {
                                 fileName: "[project]/app/school/page.tsx",
-                                lineNumber: 264,
+                                lineNumber: 152,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 263,
+                            lineNumber: 151,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -448,23 +312,23 @@ function TrainingSchoolsPage() {
                                     onClick: ()=>setLightboxImage(img)
                                 }, index, false, {
                                     fileName: "[project]/app/school/page.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 156,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/school/page.tsx",
-                            lineNumber: 266,
+                            lineNumber: 154,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/school/page.tsx",
-                    lineNumber: 234,
+                    lineNumber: 122,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/school/page.tsx",
-                lineNumber: 233,
+                lineNumber: 121,
                 columnNumber: 9
             }, this),
             lightboxImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -478,7 +342,7 @@ function TrainingSchoolsPage() {
                         children: "×"
                     }, void 0, false, {
                         fileName: "[project]/app/school/page.tsx",
-                        lineNumber: 284,
+                        lineNumber: 172,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -487,19 +351,19 @@ function TrainingSchoolsPage() {
                         className: "lightbox-image"
                     }, void 0, false, {
                         fileName: "[project]/app/school/page.tsx",
-                        lineNumber: 287,
+                        lineNumber: 175,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/school/page.tsx",
-                lineNumber: 283,
+                lineNumber: 171,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/school/page.tsx",
-        lineNumber: 203,
+        lineNumber: 91,
         columnNumber: 5
     }, this);
 }

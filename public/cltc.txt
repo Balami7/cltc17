@@ -1,0 +1,253 @@
+# API Endpoints and Sample JSON Payloads
+
+## Public endpoints
+
+POST /login
+Request JSON:
+{
+  "username": "user123",
+  "password": "secret"
+}
+
+GET /magazines
+Request: none
+Returns: JSON array of all magazines.
+
+GET /magazines/{magazine}
+Request: none
+Returns: JSON object for a single magazine.
+
+GET /news
+Request: none
+Returns: JSON array of published news articles ordered by published_at desc.
+
+## Authenticated endpoints (auth:sanctum required)
+
+POST /logout
+Request: none
+
+POST /refresh-token
+Request: none
+
+GET /user
+Request: none
+Returns: JSON object for the authenticated user.
+
+GET /users
+Request: none
+Returns: JSON array of users with id, username, first_name, last_name, email, role, sub_role, department_id, message, status.
+
+POST /users
+Request JSON:
+{
+  "user_name": "newuser",
+  "password": "secret",
+  "role": "ADMIN",
+  "sub_role": "STAFF",
+  "department": "Finance",
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com",
+  "position": "Accountant"
+}
+
+GET /users/department/{department}
+Request: none
+Returns: JSON array of users in the department, each with id, username, role, sub_role, first_name, last_name, email, position, total_number_of_users.
+
+GET /department
+Request: none
+Returns: JSON object with message, departments array, and status.
+
+POST /department
+Request JSON:
+{
+  "name": "Finance"
+}
+
+PATCH /department/{department}
+Request JSON:
+{
+  "name": "Finance Updated"
+}
+
+DELETE /department/{department}
+Request: none
+
+GET /schools
+Request: none
+Returns: JSON array of schools with coordinator.profile, instructors.profile, and courses.
+
+POST /schools
+Request JSON:
+{
+  "name": "Business School",
+  "location": "Downtown Campus",
+  "coordinator_id": 5,
+  "instructor_ids": [3, 4, 7]
+}
+
+POST /schools/{school}/instructors
+Request JSON:
+{
+  "instructor_ids": [3, 4, 7]
+}
+
+GET /courses
+Query parameters:
+- school_id (optional)
+Request: none
+Returns: JSON array of courses with instructor.profile.
+
+POST /courses
+Request JSON:
+{
+  "school_id": 2,
+  "title": "Leadership 101",
+  "description": "Introductory leadership course",
+  "duration": "8 weeks",
+  "location": "Room 305",
+  "year": "2026",
+  "instructor_id": 8,
+  "status": "OPEN",
+  "start_date": "2026-09-01"
+}
+
+PATCH /courses/{course}/status
+Request JSON:
+{
+  "status": "IN_PROGRESS"
+}
+
+GET /students
+Query parameters:
+- course_id (optional)
+Request: none
+Returns: JSON array of students.
+
+POST /students
+Request JSON:
+{
+  "course_id": 3,
+  "name": "Samuel Green",
+  "email": "samuel.green@example.com",
+  "phone": "+1234567890",
+  "address": "123 Main St"
+}
+
+POST /magazines
+Request JSON:
+{
+  "title": "Quarterly Review",
+  "content": "Magazine content here...",
+  "main_image_uri": "https://example.com/image.jpg",
+  "images": ["https://example.com/image1.jpg", "https://example.com/image2.jpg"],
+  "status": "PENDING",
+  "published_at": "2026-08-15"
+}
+
+PATCH /magazines/{magazine}
+Request JSON:
+{
+  "title": "Updated Title",
+  "content": "Updated content",
+  "main_image_uri": "https://example.com/image.jpg",
+  "images": ["https://example.com/image1.jpg"],
+  "status": "PUBLISHED",
+  "published_at": "2026-08-20"
+}
+
+DELETE /magazines/{magazine}
+Request: none
+
+GET /news/admin
+Request: none
+Returns: JSON array of all news records (admin view).
+
+POST /news
+Request JSON:
+{
+  "title": "New Announcement",
+  "content": "News content here...",
+  "excerpt": "Short summary of the news",
+  "author_id": 5,
+  "main_image_uri": "https://example.com/news.jpg",
+  "images": ["https://example.com/news1.jpg"],
+  "status": "PENDING",
+  "published_at": "2026-08-10"
+}
+
+PATCH /news/{news}
+Request JSON:
+{
+  "title": "Updated News Title",
+  "content": "Updated content",
+  "excerpt": "Updated excerpt",
+  "author_id": 5,
+  "main_image_uri": "https://example.com/news.jpg",
+  "images": ["https://example.com/news1.jpg"],
+  "status": "PUBLISHED",
+  "published_at": "2026-08-11"
+}
+
+DELETE /news/{news}
+Request: none
+
+POST /files/upload
+Request multipart/form-data:
+- name: string
+- file: binary file
+
+POST /files/media
+Request multipart/form-data:
+- file: binary file
+
+GET /files/my-department
+Request: none
+Returns: JSON array of files for the authenticated user's department or owned by the user, including owner.profile, originDepartment, currentDepartment.
+
+GET /files/{file}
+Request: none
+Returns: JSON object for one file with owner.profile, originDepartment, currentDepartment, fileLogs.user.profile, fileLogs.fromDepartment, fileLogs.toDepartment, workflows.department.
+
+GET /files/{file}/logs
+Request: none
+Returns: JSON array of file logs with user.profile, fromDepartment, and toDepartment.
+
+POST /files/{file}/forward
+Request JSON:
+{
+  "target_department_id": 4,
+  "target_user_id": 12
+}
+
+POST /files/{file}/approve
+Request: none
+
+POST /files/{file}/reject
+Request: none
+
+GET /alumini
+Request: none
+Returns: JSON array of alumni with school and course loaded.
+
+POST /alumini
+Request JSON:
+{
+  "name": "Alice Martin",
+  "school_id": 1,
+  "course_id": 2,
+  "email": "alice.martin@example.com",
+  "phone": "+1234567890",
+  "address": "456 Elm St",
+  "year_of_participation": "2024-05-10",
+  "occupation": "Consultant",
+  "age": "30",
+  "gender": "Female",
+  "sponsor": "Acme Corp",
+  "image_url": "https://example.com/alumini.jpg"
+}
+
+GET /alumini/{alumini}
+Request: none
+Returns: JSON object for one alumni record with school and course loaded.

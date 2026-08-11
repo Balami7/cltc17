@@ -228,7 +228,7 @@ body {
 
 .footer-logo-img {
   object-fit: contain;
-  border-radius: 0;
+  border-radius: 50%;
   width: auto;
   height: 100px;
 }
@@ -1708,9 +1708,10 @@ main {
 }
 
 h2 {
+  text-align: center;
   padding-bottom: .6rem;
   font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-  display: inline-block;
+  display: block;
   position: relative;
 }
 
@@ -1722,7 +1723,8 @@ h2:after {
   height: 4px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .content {
@@ -2925,9 +2927,10 @@ input:focus, select:focus {
 }
 
 h2 {
+  text-align: center;
   padding-bottom: .6rem;
   font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-  display: inline-block;
+  display: block;
   position: relative;
 }
 
@@ -2939,7 +2942,8 @@ h2:after {
   height: 4px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .content {
@@ -3010,7 +3014,7 @@ h2:after {
 
 .footer-logo-img {
   object-fit: contain;
-  border-radius: 0;
+  border-radius: 50%;
   width: auto;
   height: 100px;
 }

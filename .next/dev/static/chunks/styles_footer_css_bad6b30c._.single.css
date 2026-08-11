@@ -35,7 +35,7 @@
 
 .footer-logo-img {
   object-fit: contain;
-  border-radius: 0;
+  border-radius: 50%;
   width: auto;
   height: 100px;
 }

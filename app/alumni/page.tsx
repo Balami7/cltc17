@@ -1,26 +1,50 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AlumniPage() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const alumni = [
-    { name: "Aisha Mohammed", photo: "sil.jpeg" },
-    { name: "Chinedu Okeke", photo: "sil.jpeg" },
-    { name: "Fatima Yusuf", photo: "sil.jpeg" },
-    { name: "Tunde Adebayo", photo: "sil.jpeg" },
-    { name: "Ngozi Eze", photo: "sil.jpeg" },
-    { name: "Ibrahim Sani", photo: "sil.jpeg" },
-    { name: "Blessing Okafor", photo: "sil.jpeg" },
-    { name: "Emeka Nwosu", photo: "sil.jpeg" },
-    { name: "Hauwa Ali", photo: "sil.jpeg" },
-    { name: "Yusuf Bello", photo: "sil.jpeg" },
-    { name: "Chioma Okonkwo", photo: "sil.jpeg" },
-    { name: "Abdullahi Musa", photo: "sil.jpeg" },
-  ];
+  const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE
+  if (!apiBase) return <div className="container">CLTC API base not configured. Set NEXT_PUBLIC_CLTC_API_BASE in environment.</div>
+  const [alumni, setAlumni] = useState<Array<{ name: string; photo: string }>>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let mounted = true
+    setLoading(true)
+    setError(null)
+
+    fetch(`${apiBase.replace(/\/+$/, '')}/alumni`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`status ${res.status}`)
+        return res.json()
+      })
+      .then((data) => {
+        if (!mounted) return
+        // data may be array or object with `alumni` field
+        const items = Array.isArray(data) ? data : data?.alumni ?? []
+        // normalize: expect items with name and photo (fallback photo)
+        const normalized = items.map((it: any) => ({ name: it.name || it.full_name || it.title || 'Unknown', photo: it.photo_urls?.[0] || it.photo || 'sil.jpeg' }))
+        setAlumni(normalized)
+      })
+      .catch((err) => {
+        if (!mounted) return
+        setError(String(err))
+        setAlumni([])
+      })
+      .finally(() => {
+        if (!mounted) return
+        setLoading(false)
+      })
+
+    return () => {
+      mounted = false
+    }
+  }, [apiBase])
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -64,17 +88,21 @@ const filteredAlumni = alumni.filter((person) =>
 
 
       <div className="alumni-grid">
-  {filteredAlumni.length === 0 ? (
-    <p className="no-results">Alumni not found</p>
-  ) : (
-    filteredAlumni.map((person, index) => (
-      <div key={index} className="alumni-card">
-        <img src={person.photo} alt={person.name} className="alumni-photo" />
-        <div className="alumni-name">{person.name}</div>
+        {loading ? (
+          <p className="no-results">Loading alumni...</p>
+        ) : error ? (
+          <p className="no-results">Alumni not found</p>
+        ) : filteredAlumni.length === 0 ? (
+          <p className="no-results">Alumni not found</p>
+        ) : (
+          filteredAlumni.map((person, index) => (
+            <div key={index} className="alumni-card">
+              <img src={person.photo} alt={person.name} className="alumni-photo" />
+              <div className="alumni-name">{person.name}</div>
+            </div>
+          ))
+        )}
       </div>
-    ))
-  )}
-</div>
 
         <hr className="section-divider" />
      

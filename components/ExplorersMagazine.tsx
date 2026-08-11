@@ -1,84 +1,53 @@
 
 
-export default function ExplorerMagazine() {
+export default async function ExplorerMagazine() {
+  const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
+  if (!API_BASE) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
 
-  const magazineSections = [
-    {
-      title: "Achievements",
-      items: [
-        {
-          image: "gal.jpg",
-          alt: "Outstanding Performance",
-          title: "Outstanding Performance",
-          text: "Celebrating record-breaking results and team milestones this quarter.",
-        },
-      ],
-    },
-    {
-      title: "Research",
-      items: [
-        {
-          image: "gal.jpg",
-          alt: "AI Ethics Framework",
-          title: "AI Ethics Framework",
-          text: "Latest publication exploring responsible AI development and deployment.",
-        },
-      ],
-    },
-    {
-      title: "Birthdays",
-      items: [
-        {
-          image: "sil.jpeg",
-          alt: "March Celebrations",
-          title: "March Celebrations",
-          text: "Warm wishes to our colleagues celebrating birthdays this month.",
-        },
-      ],
-    },
-    {
-      title: "Staff of the Month",
-      items: [
-        {
-          image: "sil.jpeg",
-          alt: "Aisha Mohammed",
-          title: "Aisha Mohammed",
-          text: "Recognized for outstanding leadership and innovative contributions.",
-        },
-      ],
-    },
-  ];
+  async function fetchLatest() {
+    try {
+      const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
+      if (!res.ok) return null
+      const data = await res.json()
+      const items = Array.isArray(data) ? data : data?.magazines ?? []
+      return items[0] ?? null
+    } catch (e) {
+      return null
+    }
+  }
+
+  const latest = await fetchLatest()
+
+  if (!latest) {
+    return (
+      <div className="explorer-magazine">
+        <div className="container">
+          <h1 className="main-title">CLTC Explorer Magazine</h1>
+          <p>No magazines available</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="explorer-magazine">
       <div className="container">
         <h1 className="main-title">CLTC Explorer Magazine</h1>
-
         <div className="grid">
-          {magazineSections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="section">
-              <div className="section-title">{section.title}</div>
-
-              {section.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="card">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className="card-image"
-                  />
-                  <div className="card-body">
-                    <h3 className="card-title">{item.title}</h3>
-                    <p className="card-text">{item.text}</p>
-                    <div className="card-footer">
-                      <button className="btn">Read More</button>
-                    </div>
-                  </div>
+          <div className="section">
+            <div className="card">
+              {latest.main_image_uri && <img src={latest.main_image_uri} alt={latest.title} className="card-image" />}
+              <div className="card-body">
+                <h3 className="card-title">{latest.title}</h3>
+                <p className="card-text">{latest.excerpt ?? ''}</p>
+                <div className="card-footer">
+                  <a className="btn" href={`/magazine/${latest.id}`}>Read Latest Issue</a>
                 </div>
-              ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
