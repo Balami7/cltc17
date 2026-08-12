@@ -6,7 +6,7 @@ export default async function ExplorerMagazine() {
 
   async function fetchLatest() {
     try {
-      const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
+      const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
       if (!res.ok) return null
       const data = await res.json()
       const items = Array.isArray(data) ? data : data?.magazines ?? []

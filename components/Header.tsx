@@ -31,7 +31,7 @@ export default function Header() {
           {/*<Link href="/coursecat" className={pathname === "/coursecat" ? "active" : ""}>COURSE CAT</Link>*/}
           <Link href="/program" className={pathname === "/program" ? "active" : ""}>PROG & EVENT</Link>
           <Link href="/alumni" className={pathname === "/alumni" ? "active" : ""}>ALUMNI</Link>
-          <Link href="/alumni" className={pathname === "/magazine" ? "active" : ""}>MAGAZINE</Link>
+          <Link href="/magazine" className={pathname === "/magazine" ? "active" : ""}>MAGAZINE</Link>
           {/*<Link href="/login" className={pathname === "/login" ? "active" : ""}>LOGIN</Link>*/}
         </nav>
 

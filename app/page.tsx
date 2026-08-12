@@ -14,7 +14,7 @@ async function getNews() {
   const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
   if (!API_BASE) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
   try {
-    const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/news`, { cache: 'no-store' })
+    const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/news`, { cache: 'no-store' })
     if (!res.ok) return []
     const data = await res.json()
     return Array.isArray(data) ? data : data?.news ?? []

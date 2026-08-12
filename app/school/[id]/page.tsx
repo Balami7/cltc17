@@ -6,7 +6,7 @@ async function fetchAll() {
   if (!API_BASE) return []
 
   try {
-    const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/public/schools`, { cache: 'no-store' })
+    const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools`, { cache: 'no-store' })
     if (!res.ok) return []
     const data = await res.json()
     return Array.isArray(data) ? data : data?.schools ?? []
@@ -19,7 +19,7 @@ async function fetchOne(id: string) {
   if (!API_BASE) return null
 
   try {
-    const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/public/schools/${id}`, { cache: 'no-store' })
+    const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools/${id}`, { cache: 'no-store' })
     if (!res.ok) return null
     return await res.json()
   } catch (e) {

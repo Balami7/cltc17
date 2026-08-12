@@ -9,7 +9,7 @@ export default function MagazinePage() {
       <section className="magazine-section">
         <div className="container">
           <div className="section-heading-wrapper">
-            <h2 className="section-heading">Magazines</h2>
+            <h2 className="section-heading">MAGAZINES</h2>
           </div>
 
           <MagazineListClient apiBase={apiBase} />

@@ -15,7 +15,7 @@ if (!API_BASE) throw new Error('CLTC API base URL not configured. Set CLTC_API_B
 
 async function fetchAll() {
   try {
-    const res = await fetch(`${API_BASE}/news`, { cache: 'no-store' })
+    const res = await fetch(`${API_BASE as string}/news`, { cache: 'no-store' })
     if (!res.ok) return []
     const data = await res.json()
     return Array.isArray(data) ? data : []
@@ -26,7 +26,7 @@ async function fetchAll() {
 
 async function fetchOne(id: string) {
   try {
-    const res = await fetch(`${API_BASE}/news/${id}`, { cache: 'no-store' })
+    const res = await fetch(`${API_BASE as string}/news/${id}`, { cache: 'no-store' })
     if (!res.ok) return null
     return await res.json()
   } catch (e) {
