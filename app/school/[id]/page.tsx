@@ -1,12 +1,8 @@
 import Link from 'next/link'
 
-const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
-
 async function fetchAll() {
-  if (!API_BASE) return []
-
   try {
-    const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools`, { cache: 'no-store' })
+    const res = await fetch('/api/public/schools', { cache: 'no-store' })
     if (!res.ok) return []
     const data = await res.json()
     return Array.isArray(data) ? data : data?.schools ?? []
@@ -16,10 +12,8 @@ async function fetchAll() {
 }
 
 async function fetchOne(id: string) {
-  if (!API_BASE) return null
-
   try {
-    const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools/${id}`, { cache: 'no-store' })
+    const res = await fetch(`/api/public/schools/${id}`, { cache: 'no-store' })
     if (!res.ok) return null
     return await res.json()
   } catch (e) {
@@ -28,9 +22,6 @@ async function fetchOne(id: string) {
 }
 
 export default async function SchoolDetail({ params }: { params: { id: string } }) {
-  if (!API_BASE) {
-    throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
-  }
 
   const id = params.id
   const [all, item] = await Promise.all([fetchAll(), fetchOne(id)])

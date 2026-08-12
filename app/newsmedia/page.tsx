@@ -6,9 +6,6 @@ export const metadata = {
 import NewsListClient from "@/components/NewsListClient"
 
 export default function NewsMediaPage() {
-  const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE || process.env.CLTC_API_BASE
-  if (!apiBase) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
-
   return (
     <main>
       <section className="news-section">
@@ -17,7 +14,7 @@ export default function NewsMediaPage() {
             <h2 className="section-heading">News & Media</h2>
           </div>
 
-          <NewsListClient apiBase={apiBase} />
+          <NewsListClient />
         </div>
       </section>
     </main>

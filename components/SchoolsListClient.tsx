@@ -9,7 +9,7 @@ type School = {
   photo_urls?: string[]
 }
 
-export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
+export default function SchoolsListClient({ apiBase }: { apiBase?: string }) {
   const [loading, setLoading] = useState(true)
   const [schools, setSchools] = useState<School[] | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -20,7 +20,7 @@ export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
     setError(null)
     setSchools(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/public/schools`)
+    fetch('/api/public/schools')
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()

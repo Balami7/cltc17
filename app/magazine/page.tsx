@@ -1,9 +1,6 @@
 import MagazineListClient from '@/components/MagazineListClient'
 
 export default function MagazinePage() {
-  const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE || process.env.CLTC_API_BASE
-  if (!apiBase) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
-
   return (
     <main>
       <section className="magazine-section">
@@ -12,7 +9,7 @@ export default function MagazinePage() {
             <h2 className="section-heading">MAGAZINES</h2>
           </div>
 
-          <MagazineListClient apiBase={apiBase} />
+          <MagazineListClient />
         </div>
       </section>
     </main>

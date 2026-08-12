@@ -8,7 +8,7 @@ type NewsItem = {
   published_at?: string
 }
 
-export default function NewsListClient({ apiBase, limit }: { apiBase: string; limit?: number }) {
+export default function NewsListClient({ apiBase, limit }: { apiBase?: string; limit?: number }) {
   const [loading, setLoading] = useState(true)
   const [news, setNews] = useState<NewsItem[] | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -19,7 +19,7 @@ export default function NewsListClient({ apiBase, limit }: { apiBase: string; li
     setError(null)
     setNews(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/news`)
+    fetch('/api/news')
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()

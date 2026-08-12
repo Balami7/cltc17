@@ -7,8 +7,6 @@ export default function AlumniPage() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE
-  if (!apiBase) return <div className="container">CLTC API base not configured. Set NEXT_PUBLIC_CLTC_API_BASE in environment.</div>
   const [alumni, setAlumni] = useState<Array<{ name: string; photo: string }>>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -18,7 +16,7 @@ export default function AlumniPage() {
     setLoading(true)
     setError(null)
 
-    fetch(`${apiBase.replace(/\/+$/, '')}/alumni`)
+    fetch('/api/alumni')
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -44,7 +42,7 @@ export default function AlumniPage() {
     return () => {
       mounted = false
     }
-  }, [apiBase])
+  }, [])
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

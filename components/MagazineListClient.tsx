@@ -8,7 +8,7 @@ type Magazine = {
   published_at?: string
 }
 
-export default function MagazineListClient({ apiBase, limit }: { apiBase: string; limit?: number }) {
+export default function MagazineListClient({ apiBase, limit }: { apiBase?: string; limit?: number }) {
   const [loading, setLoading] = useState(true)
   const [magazines, setMagazines] = useState<Magazine[] | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -18,7 +18,7 @@ export default function MagazineListClient({ apiBase, limit }: { apiBase: string
     setLoading(true)
     setError(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/magazines`)
+    fetch('/api/magazines')
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()

@@ -1,12 +1,9 @@
 
 
 export default async function ExplorerMagazine() {
-  const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
-  if (!API_BASE) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
-
   async function fetchLatest() {
     try {
-      const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
+      const res = await fetch('/api/magazines', { cache: 'no-store' })
       if (!res.ok) return null
       const data = await res.json()
       const items = Array.isArray(data) ? data : data?.magazines ?? []
