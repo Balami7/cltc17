@@ -24,6 +24,11 @@ async function getNews() {
 }
 
 export default async function Home() {
+  const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE || process.env.CLTC_API_BASE;
+  if (!apiBase) {
+    throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.');
+  }
+
   const [events, programs, courses, news] = await Promise.all([
     getRecentEvents(),
     getUpcomingPrograms(),
@@ -44,8 +49,7 @@ export default async function Home() {
       <hr className="section-divider" />
       <ExplorerMagazine   />
       <hr className="section-divider" />
-      {/* Client-side news list so the browser issues the GET and Read More navigates to detail pages */}
-      <NewsListClient apiBase={process.env.NEXT_PUBLIC_CLTC_API_BASE || process.env.CLTC_API_BASE} limit={4} />
+      <NewsListClient apiBase={apiBase} limit={4} />
     </main>
   );
 }
