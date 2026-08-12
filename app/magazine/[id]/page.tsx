@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
 const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
-if (!API_BASE) throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
 
 async function fetchAll() {
+  // 1. Double check and narrow the type to a string inside the function
+  if (!API_BASE) return [] 
+  
   try {
     const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
     if (!res.ok) return []
@@ -15,6 +17,9 @@ async function fetchAll() {
 }
 
 async function fetchOne(id: string) {
+  // 2. Double check and narrow the type to a string inside the function
+  if (!API_BASE) return null
+
   try {
     const res = await fetch(`${API_BASE.replace(/\/+$/, '')}/magazines/${id}`, { cache: 'no-store' })
     if (!res.ok) return null
@@ -25,6 +30,11 @@ async function fetchOne(id: string) {
 }
 
 export default async function MagazineDetail({ params }: { params: { id: string } }) {
+  // 3. Keep your global error check here to break the page render if the URL is completely missing
+  if (!API_BASE) {
+    throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.')
+  }
+
   const id = params.id
   const [all, item] = await Promise.all([fetchAll(), fetchOne(id)])
 
