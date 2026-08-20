@@ -1,0 +1,130 @@
+.hero {
+  background: #ffffff;
+  padding: 60px 40px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+}
+
+.director-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.director-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.director-info {
+  padding: 24px 20px;
+  background: #006400;
+  color: white;
+}
+
+.director-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.director-title {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #006400;
+  margin: 0 0 28px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.hero-description p {
+  margin: 0 0 20px;
+}
+
+.hero-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 50px 30px;
+  }
+  
+  .hero-container {
+    gap: 40px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .director-card {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .hero-left {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  
+  .hero-right {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-description {
+    font-size: 15px;
+  }
+}
