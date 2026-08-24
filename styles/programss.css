@@ -1,37 +1,45 @@
-.container {
-  max-width: 1100px;
+.programs-section {
+  background: #ffffff;
+  padding: 60px 40px;
+}
+
+.programs-section .container {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 15px;
 }
 
-.events-header {
+.programs-section .section-heading-wrapper {
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: 70px;
+  margin-bottom: 3.5rem;
 }
 
-.events-header h1 {
-  font-size: 48px;
+.programs-section .section-heading {
+  font-size: clamp(2.2rem, 5vw, 2.9rem);
   font-weight: 700;
   color: #006400;
-  margin: 0;
+  margin: 0 auto 1rem;
+  display: block;
+  width: fit-content;
   position: relative;
-  display: inline-block;
-  padding-bottom: 16px;
-  text-transform: uppercase;
+  padding-bottom: 0.9rem;
 }
 
-
-.events-header h1::after {
-  content: "";
+.programs-section .section-heading::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
-  height: 4px;
-  background-color: #006400;
-  border-radius: 2px;
+  height: 5px;
+  background: #006400;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .programs-section {
+    padding: 40px 20px;
+  }
 }
 
 

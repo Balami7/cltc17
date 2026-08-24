@@ -51,7 +51,7 @@ function MagazineDetailContent() {
         <div className="detail-container">
           <div className="detail-not-found">
             <h2>Magazine not found.</h2>
-            <Link href="/magazine.html" className="detail-back">← Back to Magazine</Link>
+            <Link href="/magazine" className="detail-back">← Back to Magazine</Link>
           </div>
         </div>
       </main>
@@ -61,7 +61,7 @@ function MagazineDetailContent() {
   return (
     <main className="detail-page">
       <div className="detail-container">
-        <Link href="/magazine.html" className="detail-back">← Back to Magazine</Link>
+        <Link href="/magazine" className="detail-back">← Back to Magazine</Link>
         <article className="detail-article">
           {item.main_image_uri && (
             <img src={item.main_image_uri} alt={item.title} className="detail-hero-image" />

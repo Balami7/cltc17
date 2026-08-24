@@ -102,7 +102,7 @@ export default function NewsListClient({ apiBase, limit }: { apiBase: string; li
           <div className="news-date">{item.published_at?.split('T')[0] || ''}</div>
           <div className="news-content">
             <h3 className="news-title">{item.title}</h3>
-            <a href={`/news-detail.html?id=${item.id}`} className="news-readmore">
+            <a href={`/news-detail?id=${item.id}`} className="news-readmore">
               Read More
             </a>
           </div>

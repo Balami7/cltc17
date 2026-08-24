@@ -1,3 +1,42 @@
+/* ── Schools Section ── */
+.schools-section {
+  background: #ffffff;
+  padding: 60px 40px;
+}
+
+.schools-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.schools-section .section-heading-wrapper {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.schools-section .section-heading {
+  font-size: clamp(2.2rem, 5vw, 2.9rem);
+  font-weight: 700;
+  color: #006400;
+  margin: 0 auto 1rem;
+  display: block;
+  width: fit-content;
+  position: relative;
+  padding-bottom: 0.9rem;
+}
+
+.schools-section .section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: #006400;
+  border-radius: 3px;
+}
+
 /* ── School Grid Layout ── */
 .schools-grid {
   display: grid;

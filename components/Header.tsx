@@ -1,16 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isCoursesActive =
+    pathname === "/all-courses" ||
+    pathname === "/online-courses" ||
+    pathname === "/courses" ||
+    pathname === "/coursecat" ||
+    pathname?.startsWith("/course");
 
   const handleLinkClick = () => {
     setMenuOpen(false);
+    setCoursesDropdownOpen(false);
+    setMobileCoursesOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setCoursesDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -24,14 +51,47 @@ export default function Header() {
 
         <nav className="nav-menu">
           <Link href="/" className={pathname === "/" ? "active" : ""}>HOME</Link>
-          <Link href="/about.html" className={pathname === "/about.html" ? "active" : ""}>ABOUT US</Link>
-          <Link href="/procurement.html" className={pathname === "/procurement.html" ? "active" : ""}>PROCUREMENT</Link>
-          <Link href="/newsmedia.html" className={pathname === "/newsmedia.html" ? "active" : ""}>NEWS & MEDIA</Link>
-          <Link href="/school.html" className={pathname === "/school.html" ? "active" : ""}>TRAINING SCHS</Link>
-          {/*<Link href="/coursecat" className={pathname === "/coursecat" ? "active" : ""}>COURSE CAT</Link>*/}
-          <Link href="/program.html" className={pathname === "/program.html" ? "active" : ""}>PROG & EVENT</Link>
-          <Link href="/alumni.html" className={pathname === "/alumni.html" ? "active" : ""}>ALUMNI</Link>
-          <Link href="/magazine.html" className={pathname === "/magazine.html" ? "active" : ""}>MAGAZINE</Link>
+          <Link href="/about" className={pathname === "/about" ? "active" : ""}>ABOUT US</Link>
+          <Link href="/procurement" className={pathname === "/procurement" ? "active" : ""}>PROCUREMENT</Link>
+          <Link href="/newsmedia" className={pathname === "/newsmedia" ? "active" : ""}>NEWS & MEDIA</Link>
+          <Link href="/school" className={pathname === "/school" ? "active" : ""}>TRAINING SCHS</Link>
+          
+          <div
+            className={`nav-dropdown ${coursesDropdownOpen ? "open" : ""}`}
+            ref={dropdownRef}
+            onMouseEnter={() => setCoursesDropdownOpen(true)}
+            onMouseLeave={() => setCoursesDropdownOpen(false)}
+          >
+            <button
+              type="button"
+              className={`dropdown-trigger ${isCoursesActive ? "active" : ""}`}
+              onClick={() => setCoursesDropdownOpen(!coursesDropdownOpen)}
+              aria-expanded={coursesDropdownOpen}
+              aria-haspopup="true"
+            >
+              COURSES <i className="fa-solid fa-chevron-down"></i>
+            </button>
+            <div className="dropdown-menu">
+              <Link
+                href="/all-courses"
+                onClick={handleLinkClick}
+                className={pathname === "/all-courses" ? "active" : ""}
+              >
+                ALL COURSES
+              </Link>
+              <Link
+                href="/online-courses"
+                onClick={handleLinkClick}
+                className={pathname === "/online-courses" ? "active" : ""}
+              >
+                ONLINE COURSES
+              </Link>
+            </div>
+          </div>
+
+          <Link href="/program" className={pathname === "/program" ? "active" : ""}>PROG & EVENT</Link>
+          <Link href="/alumni" className={pathname === "/alumni" ? "active" : ""}>ALUMNI</Link>
+          <Link href="/magazine" className={pathname === "/magazine" ? "active" : ""}>MAGAZINE</Link>
           {/*<Link href="/login" className={pathname === "/login" ? "active" : ""}>LOGIN</Link>*/}
         </nav>
 
@@ -61,28 +121,55 @@ export default function Header() {
           <Link href="/" onClick={handleLinkClick} className={pathname === "/" ? "active" : ""}>
             HOME
           </Link>
-          <Link href="/about.html" onClick={handleLinkClick} className={pathname === "/about.html" ? "active" : ""}>
+          <Link href="/about" onClick={handleLinkClick} className={pathname === "/about" ? "active" : ""}>
             ABOUT US
           </Link>
-          <Link href="/procurement.html" onClick={handleLinkClick} className={pathname === "/procurement.html" ? "active" : ""}>
+          <Link href="/procurement" onClick={handleLinkClick} className={pathname === "/procurement" ? "active" : ""}>
             PROCUREMENT
           </Link>
-          <Link href="/newsmedia.html" onClick={handleLinkClick} className={pathname === "/newsmedia.html" ? "active" : ""}>
+          <Link href="/newsmedia" onClick={handleLinkClick} className={pathname === "/newsmedia" ? "active" : ""}>
             NEWS & MEDIA
           </Link>
-          <Link href="/school.html" onClick={handleLinkClick} className={pathname === "/school.html" ? "active" : ""}>
+          <Link href="/school" onClick={handleLinkClick} className={pathname === "/school" ? "active" : ""}>
             TRAINING SCHOOLS
           </Link>
-          {/*<Link href="/coursecat" onClick={handleLinkClick} className={pathname === "/coursecat" ? "active" : ""}>
-            COURSE CAT
-          </Link>*/}
-          <Link href="/program.html" onClick={handleLinkClick} className={pathname === "/program.html" ? "active" : ""}>
+          
+          <div className="mobile-dropdown">
+            <button
+              type="button"
+              className={`mobile-dropdown-btn ${isCoursesActive ? "active" : ""} ${mobileCoursesOpen ? "open" : ""}`}
+              onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+              aria-expanded={mobileCoursesOpen}
+            >
+              COURSES <i className="fa-solid fa-chevron-down"></i>
+            </button>
+            {mobileCoursesOpen && (
+              <div className="mobile-dropdown-menu open">
+                <Link
+                  href="/all-courses"
+                  onClick={handleLinkClick}
+                  className={pathname === "/all-courses" ? "active" : ""}
+                >
+                  ALL COURSES
+                </Link>
+                <Link
+                  href="/online-courses"
+                  onClick={handleLinkClick}
+                  className={pathname === "/online-courses" ? "active" : ""}
+                >
+                  ONLINE COURSES
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/program" onClick={handleLinkClick} className={pathname === "/program" ? "active" : ""}>
             PROG & EVENT
           </Link>
-          <Link href="/alumni.html" onClick={handleLinkClick} className={pathname === "/alumni.html" ? "active" : ""}>
+          <Link href="/alumni" onClick={handleLinkClick} className={pathname === "/alumni" ? "active" : ""}>
             ALUMNI
           </Link>
-          <Link href="/magazine.html" onClick={handleLinkClick} className={pathname === "/magazine.html" ? "active" : ""}>
+          <Link href="/magazine" onClick={handleLinkClick} className={pathname === "/magazine" ? "active" : ""}>
             MAGAZINE
           </Link>
           {/*<Link href="/login" onClick={handleLinkClick} className={pathname === "/login" ? "active" : ""}>
@@ -92,6 +179,5 @@ export default function Header() {
       </div>
     </>
   );
-
 }
 

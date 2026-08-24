@@ -83,7 +83,7 @@ export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
           return (
             <a
               key={`${identifier}-${(currentPage - 1) * itemsPerPage + idx}`}
-              href={`/school-detail.html?id=${encodeURIComponent(identifier)}`}
+              href={`/school-detail?id=${encodeURIComponent(identifier)}`}
               className="school-card"
             >
               <div className="school-card-image">

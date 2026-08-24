@@ -54,7 +54,7 @@ function SchoolDetailContent() {
         <div className="detail-container">
           <div className="detail-not-found">
             <h2>School not found.</h2>
-            <Link href="/school.html" className="detail-back">← Back to Schools</Link>
+            <Link href="/school" className="detail-back">← Back to Schools</Link>
           </div>
         </div>
       </main>
@@ -64,7 +64,7 @@ function SchoolDetailContent() {
   return (
     <main className="detail-page">
       <div className="detail-container">
-        <Link href="/school.html" className="detail-back">← Back to Schools</Link>
+        <Link href="/school" className="detail-back">← Back to Schools</Link>
         <article className="detail-article">
           {item.photo_urls?.length > 0 && (
             <img src={item.photo_urls[0]} alt={item.name} className="detail-hero-image" />

@@ -52,7 +52,7 @@ export default async function ExplorerMagazine() {
                 <div className="news-content">
                   <h3 className="news-title">{latest.title}</h3>
                   <p>{latest.excerpt ?? ''}</p>
-                  <a href={`/magazine/detail?id=${latest.id}`} className="news-readmore">Read Issue</a>
+                  <a href={`/magazine-detail?id=${latest.id}`} className="news-readmore">Read Issue</a>
                 </div>
               </div>
             ))}

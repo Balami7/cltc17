@@ -93,7 +93,7 @@ export default function MagazineListClient({ apiBase, limit }: { apiBase: string
             <div className="news-date">{m.published_at?.split('T')[0] || ''}</div>
             <div className="news-content">
               <h3 className="news-title">{m.title}</h3>
-              <a href={`/magazine-detail.html?id=${m.id}`} className="news-readmore">Read Issue</a>
+              <a href={`/magazine-detail?id=${m.id}`} className="news-readmore">Read Issue</a>
             </div>
           </div>
         ))}

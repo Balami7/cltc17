@@ -41,32 +41,34 @@ export default function ProgramEventsPage() {
 
   return (
     <main>
-      <div className="container">
-        <div className="events-header">
-          <h1>Programmes & Events</h1>
-        </div>
+      <section className="programs-section">
+        <div className="container">
+          <div className="section-heading-wrapper">
+            <h2 className="section-heading">Programmes & Events</h2>
+          </div>
 
-        <div className="events-grid">
-          {events.map((event, index) => (
-            <div key={index} className="event-card">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="event-image"
-                width={400}
-                height={220}
-              />
-              <div className="event-content">
-                <div className="event-title">{event.title}</div>
-                <div className="event-meta">
-                  <span className="event-date">{event.date}</span> • {event.location}
+          <div className="events-grid">
+            {events.map((event, index) => (
+              <div key={index} className="event-card">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="event-image"
+                  width={400}
+                  height={220}
+                />
+                <div className="event-content">
+                  <div className="event-title">{event.title}</div>
+                  <div className="event-meta">
+                    <span className="event-date">{event.date}</span> • {event.location}
+                  </div>
+                  <p className="event-desc">{event.description}</p>
                 </div>
-                <p className="event-desc">{event.description}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

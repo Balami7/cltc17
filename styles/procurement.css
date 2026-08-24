@@ -1,39 +1,46 @@
 .procurement-section {
-    background: #ffffff;
-    padding: 5rem 5% 6rem;
-  }
+  background: #ffffff;
+  padding: 60px 40px;
+}
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+.procurement-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-  .section-heading-wrapper {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
+.procurement-section .section-heading-wrapper {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
 
-  .section-heading {
-    font-size: clamp(2.2rem, 5vw, 2.8rem);
-    font-weight: 700;
-    color: #006400;
-    margin: 0 auto 0.8rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.8rem;
-  }
+.procurement-section .section-heading {
+  font-size: clamp(2.2rem, 5vw, 2.9rem);
+  font-weight: 700;
+  color: #006400;
+  margin: 0 auto 1rem;
+  display: block;
+  width: fit-content;
+  position: relative;
+  padding-bottom: 0.9rem;
+}
 
-  .section-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: #006400;
-    border-radius: 2px;
+.procurement-section .section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: #006400;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .procurement-section {
+    padding: 40px 20px;
   }
+}
 
   .tender-content {
     background: #f9f9f9;

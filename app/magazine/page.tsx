@@ -8,8 +8,8 @@ export default function MagazinePage() {
     <main>
       <section className="news-section">
         <div className="container">
-          <div className="news-header">
-            <h2>MAGAZINES</h2>
+          <div className="section-heading-wrapper">
+            <h2 className="section-heading">Explorer&apos;s Magazine</h2>
           </div>
 
           <MagazineListClient apiBase={apiBase} />
