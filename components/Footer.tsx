@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
             <div className="email">
               <i className="fa-solid fa-envelope"></i>
-              info@cltc.gov.ng
+              info1@cltc.gov.ng
             </div>
           </div>
         </div>
@@ -68,8 +68,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom"> 
-        <p>Copyright © {new Date().getFullYear()} CLTC | Powered by CLTC.</p> 
+      <div className="footer-bottom">
+        <p>Copyright © {new Date().getFullYear()} CLTC | Powered by CLTC.</p>
       </div>
     </footer>
   );

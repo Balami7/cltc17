@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import React from 'react';
 
@@ -35,7 +35,7 @@ const FALLBACK_COURSES: CourseItem[] = [
 ];
 
 interface CoursesSectionProps {
-  courses?: CourseItem[]; 
+  courses?: CourseItem[];
 }
 
 export default function CoursesSection({ courses = [] }: CoursesSectionProps) {
@@ -49,8 +49,8 @@ export default function CoursesSection({ courses = [] }: CoursesSectionProps) {
 
       <div className="courses-tabs">
         <button className="tab active">Popular Courses</button>
-        <a href="#" className="all-courses-link">All Courses</a>
-        <a href="#" className="all-courses-link">Online Courses</a>
+        <a href="/all-courses" className="all-courses-link">All Courses</a>
+        <a href="/online-courses" className="all-courses-link">Online Courses</a>
       </div>
 
       <div className="courses-grid">

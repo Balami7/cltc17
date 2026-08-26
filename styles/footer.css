@@ -1,5 +1,5 @@
 .footer {
-  background-color: #006400;
+  background-color: #0056b3;
   color: white;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 14px;
@@ -142,7 +142,7 @@
   align-items: center;
   text-align: center;
   padding: 20px 0;
-  background-color: #004d00;
+  background-color: #003d80;
   border-top: 1px solid rgba(255,255,255,0.18);
   font-size: 13px;
 }

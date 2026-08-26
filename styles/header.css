@@ -9,7 +9,7 @@
     }
 
     .header {
-      background-color: #006400;
+      background-color: #0056b3;
       color: white;
       height: 90px;
       padding: 0 40px;
@@ -76,13 +76,13 @@
     .nav-dropdown:hover .dropdown-trigger,
     .nav-dropdown.open .dropdown-trigger {
       background-color: rgba(255, 255, 255, 0.92);
-      color: #006400;
+      color: #0056b3;
     }
 
     .nav-menu a.active,
     .nav-menu .dropdown-trigger.active {
       background-color: rgba(255, 255, 255, 0.95);
-      color: #006400;
+      color: #0056b3;
       font-weight: 600;
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
@@ -108,7 +108,7 @@
       top: 100%;
       left: 0;
       min-width: 175px;
-      background-color: #006400;
+      background-color: #0056b3;
       border-radius: 6px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -148,13 +148,13 @@
 
     .dropdown-menu a:hover {
       background-color: rgba(255, 255, 255, 0.92) !important;
-      color: #006400 !important;
+      color: #0056b3 !important;
       padding-left: 20px !important;
     }
 
     .dropdown-menu a.active {
       background-color: rgba(255, 255, 255, 0.95) !important;
-      color: #006400 !important;
+      color: #0056b3 !important;
       font-weight: 600;
     }
 
@@ -171,7 +171,7 @@
     .mobile-menu {
       position: fixed;
       inset: 0;
-      background: #006400;
+      background: #0056b3;
       color: white;
       z-index: 9999;
       display: none;
