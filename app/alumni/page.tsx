@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 export default function AlumniPage() {
   const [showSuccess, setShowSuccess] = useState(false);
-  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const apiBase = process.env.NEXT_PUBLIC_CLTC_API_BASE
   if (!apiBase) return <div className="container">CLTC API base not configured. Set NEXT_PUBLIC_CLTC_API_BASE in environment.</div>
@@ -17,11 +19,9 @@ export default function AlumniPage() {
   const gridRef = useRef<HTMLDivElement | null>(null)
   const itemsPerPage = 10 * columns
 
-  useEffect(() => {
-    let mounted = true
+  const fetchAlumni = (mounted = true) => {
     setLoading(true)
     setError(null)
-
     fetch(`${apiBase.replace(/\/+$/, '')}/alumni`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
@@ -29,9 +29,7 @@ export default function AlumniPage() {
       })
       .then((data) => {
         if (!mounted) return
-        // data may be array or object with `alumni` field
         const items = Array.isArray(data) ? data : data?.alumni ?? []
-        // normalize: expect items with name and photo (fallback photo)
         const normalized = items.map((it: any) => ({ name: it.name || it.full_name || it.title || 'Unknown', photo: it.photo_urls?.[0] || it.photo || 'sil.jpeg' }))
         setAlumni(normalized)
       })
@@ -44,7 +42,11 @@ export default function AlumniPage() {
         if (!mounted) return
         setLoading(false)
       })
+  }
 
+  useEffect(() => {
+    let mounted = true
+    fetchAlumni(mounted)
     return () => {
       mounted = false
     }
@@ -74,26 +76,55 @@ export default function AlumniPage() {
     if (currentPage > totalPages) setCurrentPage(totalPages)
   }, [currentPage, totalPages])
 
-  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPhotoPreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setShowSuccess(true);
+    setSubmitError(null);
+    setSubmitLoading(true);
 
-    setTimeout(() => {
-      (e.target as HTMLFormElement).reset();
-      setPhotoPreview(null);
-      setShowSuccess(false);
-    }, 10000);
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("fullName"),
+      full_name: formData.get("fullName"),
+      dob: formData.get("dob"),
+      completion_date: formData.get("completionDate"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      occupation: formData.get("occupation"),
+      course_category: formData.get("courses"),
+      photo: photoUrl,
+      photo_url: photoUrl,
+    };
+
+    fetch(`${apiBase.replace(/\/+$/, '')}/public/admin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const errMsg = await res.text().catch(() => "");
+          throw new Error(errMsg || `status ${res.status}`);
+        }
+        return res.json().catch(() => ({}));
+      })
+      .then(() => {
+        setShowSuccess(true);
+        (e.target as HTMLFormElement).reset();
+        setPhotoUrl("");
+        fetchAlumni(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 8000);
+      })
+      .catch((err) => {
+        console.error("Alumni registration failed:", err);
+        setSubmitError(err.message || String(err));
+      })
+      .finally(() => {
+        setSubmitLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -203,13 +234,8 @@ export default function AlumniPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="photo">Profile Picture</label>
-                <input type="file" id="photo" accept="image/*" onChange={handlePhotoChange} />
-                <div className="photo-preview-container">
-                  {photoPreview && (
-                    <img id="photoPreview" src={photoPreview} alt="Profile preview" />
-                  )}
-                </div>
+                <label htmlFor="photoUrl">Profile Picture URL *</label>
+                <input type="text" id="photoUrl" placeholder="https://example.com/photo.jpg" required value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} />
               </div>
 
               <div className="submit-btn-wrapper">

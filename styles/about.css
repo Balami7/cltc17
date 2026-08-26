@@ -59,7 +59,6 @@ h2::after {
   position: absolute;
   bottom: 0;
   left: 50%;
-  /* 3. Shifts left edge to the exact middle */
   transform: translateX(-50%);
   width: 80px;
   height: 4px;

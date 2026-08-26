@@ -8,7 +8,6 @@ import NewsListClient from "@/components/NewsListClient"
 import ExplorerMagazine from "@/components/ExplorersMagazine";
 
 async function getRecentEvents() { return []; }
-async function getUpcomingPrograms() { return []; }
 async function getCourses() { return []; }
 async function getNews() {
   const API_BASE = process.env.CLTC_API_BASE || process.env.NEXT_PUBLIC_CLTC_API_BASE
@@ -29,9 +28,8 @@ export default async function Home() {
     throw new Error('CLTC API base URL not configured. Set CLTC_API_BASE or NEXT_PUBLIC_CLTC_API_BASE in environment.');
   }
 
-  const [events, programs, courses, news] = await Promise.all([
+  const [events, courses, news] = await Promise.all([
     getRecentEvents(),
-    getUpcomingPrograms(),
     getCourses(),
     getNews(),
   ]);
@@ -43,7 +41,7 @@ export default async function Home() {
       <hr className="section-divider" />
       <EventsSlideshow events={events} />
       <hr className="section-divider" />
-      <UpcomingPrograms programs={programs} />
+      <UpcomingPrograms apiBase={apiBase} />
       <hr className="section-divider" />
       <CoursesSection courses={courses} />
       <hr className="section-divider" />
