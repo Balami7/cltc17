@@ -6,7 +6,6 @@ type EventItem = {
   id: string | number
   title: string
   summary?: string
-  description?: string
   'image-url'?: string
   image_url?: string
   image?: string
@@ -61,7 +60,7 @@ export default function ProgramEventsListClient({ apiBase }: { apiBase: string }
     <div className="events-grid">
       {events.map((event, index) => {
         const imgUrl = event["image-url"] || event.image_url || event.image || "/gal.jpg"
-        const desc = event.summary || event.description || ""
+        const desc = event.summary || ""
         return (
           <div key={event.id ?? index} className="event-card">
             <img

@@ -22,7 +22,7 @@ export default function AlumniPage() {
   const fetchAlumni = (mounted = true) => {
     setLoading(true)
     setError(null)
-    fetch(`${apiBase.replace(/\/+$/, '')}/alumni`)
+    fetch(`${apiBase.replace(/\/+$/, '')}/public/alumni`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -84,18 +84,20 @@ export default function AlumniPage() {
     const formData = new FormData(e.currentTarget);
     const payload = {
       name: formData.get("fullName"),
-      full_name: formData.get("fullName"),
-      dob: formData.get("dob"),
-      completion_date: formData.get("completionDate"),
       email: formData.get("email"),
       phone: formData.get("phone"),
+      address: formData.get("address"),
+      school_id: formData.get("schoolId"),
+      course_id: formData.get("courseId"),
+      year_of_participation: formData.get("year"),
       occupation: formData.get("occupation"),
-      course_category: formData.get("courses"),
-      photo: photoUrl,
-      photo_url: photoUrl,
+      age: formData.get("age"),
+      gender: formData.get("gender"),
+      sponsor: formData.get("sponsor"),
+      image_url: photoUrl,
     };
 
-    fetch(`${apiBase.replace(/\/+$/, '')}/public/admin`, {
+    fetch(`${apiBase.replace(/\/+$/, '')}/public/alumni`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -104,8 +106,8 @@ export default function AlumniPage() {
     })
       .then(async (res) => {
         if (!res.ok) {
-          const errMsg = await res.text().catch(() => "");
-          throw new Error(errMsg || `status ${res.status}`);
+          const desc = "";
+          throw new Error(desc || `status ${res.status}`);
         }
         return res.json().catch(() => ({}));
       })
