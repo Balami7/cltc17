@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState, Suspense } from 'react'
+import DataState from '@/components/DataState'
+import { cachedFetch } from '@/lib/cachedFetch'
 
 const API_BASE = process.env.NEXT_PUBLIC_CLTC_API_BASE || process.env.CLTC_API_BASE
 
@@ -18,8 +20,7 @@ function SchoolDetailContent() {
       setLoading(false)
       return
     }
-
-    fetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools`)
+    cachedFetch(`${(API_BASE as string).replace(/\/+$/, '')}/public/schools`)
       .then(res => {
         if (!res.ok) return []
         return res.json()
@@ -27,7 +28,9 @@ function SchoolDetailContent() {
       .then(data => {
         const arr = Array.isArray(data) ? data : data?.schools ?? []
         // We use school_email as the unique ID for schools based on previous files
-        const found = arr.find((s: any) => String(s.school_email) === id)
+        const found = arr.find((s: any) =>
+          [s.school_email, s.id, s.name].some((identifier) => String(identifier) === id),
+        )
         setItem(found || null)
       })
       .catch(e => {
@@ -42,7 +45,7 @@ function SchoolDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-loading">Loading school...</div>
+          <DataState icon="fa-school">Loading school...</DataState>
         </div>
       </main>
     )
@@ -52,10 +55,10 @@ function SchoolDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-not-found">
-            <h2>School not found.</h2>
+          <DataState icon="fa-school">
+            <span>School not found.</span>
             <Link href="/school" className="detail-back">← Back to Schools</Link>
-          </div>
+          </DataState>
         </div>
       </main>
     )
@@ -86,6 +89,18 @@ function SchoolDetailContent() {
                 </div>
               )}
             </div>
+            {item.brief_profile && (
+              <div className="detail-content">
+                <p>{item.brief_profile}</p>
+              </div>
+            )}
+            {item.unique_feature?.length > 0 && (
+              <div className="detail-content">
+                <ul>
+                  {item.unique_feature.map((feature: string) => <li key={feature}>{feature}</li>)}
+                </ul>
+              </div>
+            )}
             {item.coordinator_name && (
               <div className="detail-coordinator">
                 <div className="detail-coordinator-icon">
@@ -126,7 +141,7 @@ function SchoolDetailContent() {
 
 export default function SchoolDetail() {
   return (
-    <Suspense fallback={<div className="detail-loading">Loading...</div>}>
+    <Suspense fallback={<DataState icon="fa-school">Loading school...</DataState>}>
       <SchoolDetailContent />
     </Suspense>
   )

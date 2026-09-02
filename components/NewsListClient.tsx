@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type NewsItem = {
   id: string
@@ -24,7 +26,7 @@ export default function NewsListClient({ apiBase, limit }: { apiBase: string; li
     setError(null)
     setNews(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/news`)
+    cachedFetch(`${apiBase.replace(/\/+$/, "")}/news`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -67,14 +69,14 @@ export default function NewsListClient({ apiBase, limit }: { apiBase: string; li
     if (currentPage > totalPages) setCurrentPage(totalPages || 1)
   }, [currentPage, itemsPerPage, news])
 
-  if (loading) return <div className="news-loading">Loading news...</div>
+  if (loading) return <DataState icon="fa-newspaper">Loading news...</DataState>
 
   if (!loading && Array.isArray(news) && news.length === 0) {
-    return <div className="no-news">No News/Media</div>
+    return <DataState icon="fa-newspaper">No News/Media</DataState>
   }
 
   if (error) {
-    return <div className="no-news">No News/Media</div>
+    return <DataState icon="fa-newspaper">No News/Media</DataState>
   }
 
   const totalPages = Array.isArray(news) ? Math.ceil(news.length / itemsPerPage) : 0

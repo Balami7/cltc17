@@ -1,5 +1,7 @@
 
 
+import DataState from "./DataState"
+
 interface Magazine {
   id: string
   title: string
@@ -14,7 +16,7 @@ export default async function ExplorerMagazine() {
 
   async function fetchLatest(): Promise<Magazine[]> {
     try {
-      const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines`, { cache: 'no-store' })
+      const res = await fetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines`, { next: { revalidate: 300 } })
       if (!res.ok) return []
       const data = await res.json()
       return Array.isArray(data) ? data : data?.magazines ?? []
@@ -33,7 +35,7 @@ export default async function ExplorerMagazine() {
           <h2>CLTC Explorer Magazine</h2>
         </div>
         {latestMagazines.length === 0 ? (
-          <p>No magazines available</p>
+          <DataState icon="fa-book">No magazines available</DataState>
         ) : (
           <div className="news-grid">
             {latestMagazines.map((latest: Magazine) => (

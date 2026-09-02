@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type Magazine = {
   id: string
@@ -23,7 +25,7 @@ export default function MagazineListClient({ apiBase, limit }: { apiBase: string
     setLoading(true)
     setError(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/magazines`)
+    cachedFetch(`${apiBase.replace(/\/+$/, "")}/magazines`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -66,9 +68,9 @@ export default function MagazineListClient({ apiBase, limit }: { apiBase: string
     if (currentPage > totalPages) setCurrentPage(totalPages || 1)
   }, [currentPage, itemsPerPage, magazines])
 
-  if (loading) return <div className="news-loading">Loading magazines...</div>
-  if (error) return <div className="no-news">No Magazines</div>
-  if (!magazines || magazines.length === 0) return <div className="no-news">No Magazines</div>
+  if (loading) return <DataState icon="fa-book">Loading magazines...</DataState>
+  if (error) return <DataState icon="fa-book">No Magazines</DataState>
+  if (!magazines || magazines.length === 0) return <DataState icon="fa-book">No Magazines</DataState>
 
   const totalPages = Math.ceil(magazines.length / itemsPerPage)
   const displayed = limit

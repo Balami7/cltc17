@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type Procurement = {
   id: string | number
@@ -21,7 +23,7 @@ export default function ProcurementsListClient({ apiBase }: { apiBase: string })
     let mounted = true
     const endpoint = `${apiBase.replace(/\/+$/, "")}/public/procurements`
     
-    fetch(endpoint)
+    cachedFetch(endpoint)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
@@ -44,11 +46,11 @@ export default function ProcurementsListClient({ apiBase }: { apiBase: string })
   }, [apiBase])
 
   if (loading) {
-    return <div className="news-loading">Loading procurements...</div>
+    return <DataState icon="fa-file-invoice">Loading procurements...</DataState>
   }
 
   if (!procurements || procurements.length === 0) {
-    return <div className="no-news">No procurements found</div>
+    return <DataState icon="fa-file-invoice">No procurements found</DataState>
   }
 
   return (

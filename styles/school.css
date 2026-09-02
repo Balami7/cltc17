@@ -54,6 +54,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .school-card:hover {
@@ -89,6 +91,18 @@
   font-size: 15px;
   color: #555;
   margin: 0;
+}
+
+.school-card-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px !important;
+}
+
+.school-card-location i {
+  color: #006400;
+  font-size: 14px;
 }
 
 /* ── Modal ── */
