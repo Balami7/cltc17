@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState, Suspense } from 'react'
+import DataState from '@/components/DataState'
+import { cachedFetch } from '@/lib/cachedFetch'
 
 const API_BASE = process.env.NEXT_PUBLIC_CLTC_API_BASE
 
@@ -18,9 +20,8 @@ function NewsDetailContent() {
       setLoading(false)
       return
     }
-
     // Use our new public endpoint if available or stick to the exact previous fetch logic
-    fetch(`${(API_BASE as string).replace(/\/+$/, '')}/news`)
+    cachedFetch(`${(API_BASE as string).replace(/\/+$/, '')}/news`)
       .then(res => {
         if (!res.ok) return []
         return res.json()
@@ -42,7 +43,7 @@ function NewsDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-loading">Loading news...</div>
+          <DataState icon="fa-newspaper">Loading news...</DataState>
         </div>
       </main>
     )
@@ -52,10 +53,10 @@ function NewsDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-not-found">
-            <h2>News not found.</h2>
+          <DataState icon="fa-newspaper">
+            <span>News not found.</span>
             <Link href="/newsmedia" className="detail-back">← Back to News</Link>
-          </div>
+          </DataState>
         </div>
       </main>
     )
@@ -90,7 +91,7 @@ function NewsDetailContent() {
 
 export default function NewsDetailPage() {
   return (
-    <Suspense fallback={<div className="detail-loading">Loading...</div>}>
+    <Suspense fallback={<DataState icon="fa-newspaper">Loading news...</DataState>}>
       <NewsDetailContent />
     </Suspense>
   )

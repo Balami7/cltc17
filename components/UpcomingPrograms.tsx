@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type EventItem = {
   id: string | number
@@ -26,7 +28,7 @@ export default function UpcomingPrograms({ apiBase }: { apiBase: string }) {
     let mounted = true
     const endpoint = `${apiBase.replace(/\/+$/, "")}/public/events`
 
-    fetch(endpoint)
+    cachedFetch(endpoint)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
@@ -65,7 +67,7 @@ export default function UpcomingPrograms({ apiBase }: { apiBase: string }) {
     return (
       <section className="upcoming-programs">
         <div className="section-title">UPCOMING PROGRAMMES</div>
-        <div className="news-loading">Loading programmes...</div>
+        <DataState icon="fa-calendar-days">Loading programmes...</DataState>
       </section>
     )
   }
@@ -74,7 +76,7 @@ export default function UpcomingPrograms({ apiBase }: { apiBase: string }) {
     return (
       <section className="upcoming-programs">
         <div className="section-title">UPCOMING PROGRAMMES</div>
-        <div className="no-news">No upcoming programmes found</div>
+        <DataState icon="fa-calendar-days">No upcoming programmes found</DataState>
       </section>
     )
   }

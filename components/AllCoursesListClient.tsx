@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import DataState from "./DataState";
+import { cachedFetch } from "@/lib/cachedFetch";
 
 export type SchoolCourse = {
   id?: string | number;
@@ -35,7 +37,7 @@ export default function AllCoursesListClient({ apiBase }: { apiBase: string }) {
     setError(null);
 
     const endpoint = `${apiBase.replace(/\/+$/, "")}/public/courses`;
-    fetch(endpoint)
+    cachedFetch(endpoint)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -119,9 +121,9 @@ export default function AllCoursesListClient({ apiBase }: { apiBase: string }) {
 
       {/* Loading state */}
       {loading ? (
-        <p className="no-results">Loading courses...</p>
+        <DataState icon="fa-book-open">Loading courses...</DataState>
       ) : filteredCourses.length === 0 ? (
-        <p className="no-results">No courses match your search criteria.</p>
+        <DataState icon="fa-book-open">No courses match your search criteria.</DataState>
       ) : (
         /* Courses Grid */
         <div ref={gridRef} className="all-courses-grid">

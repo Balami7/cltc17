@@ -505,6 +505,22 @@ body {
   flex-direction: column;
 }
 
+.data-state {
+  display: flex;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.data-state i {
+  color: #006400;
+  font-size: 2.4rem;
+}
+
 main {
   flex: 1;
 }

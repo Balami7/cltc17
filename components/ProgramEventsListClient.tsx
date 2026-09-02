@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type EventItem = {
   id: string | number
@@ -26,7 +28,7 @@ export default function ProgramEventsListClient({ apiBase }: { apiBase: string }
     let mounted = true
     const endpoint = `${apiBase.replace(/\/+$/, "")}/public/events`
 
-    fetch(endpoint)
+    cachedFetch(endpoint)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
@@ -49,11 +51,11 @@ export default function ProgramEventsListClient({ apiBase }: { apiBase: string }
   }, [apiBase])
 
   if (loading) {
-    return <div className="news-loading">Loading events...</div>
+    return <DataState icon="fa-calendar-days">Loading events...</DataState>
   }
 
   if (events.length === 0) {
-    return <div className="no-news">No events found</div>
+    return <DataState icon="fa-calendar-days">No events found</DataState>
   }
 
   return (

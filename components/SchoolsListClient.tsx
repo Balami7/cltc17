@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import DataState from "./DataState"
+import { cachedFetch } from "@/lib/cachedFetch"
 
 type School = {
   id?: string
@@ -21,11 +23,12 @@ export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
 
   useEffect(() => {
     let mounted = true
+
     setLoading(true)
     setError(null)
     setSchools(null)
 
-    fetch(`${apiBase.replace(/\/+$/, "")}/public/schools`)
+    cachedFetch(`${apiBase.replace(/\/+$/, "")}/public/schools`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -68,9 +71,9 @@ export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
     if (currentPage > totalPages) setCurrentPage(totalPages || 1)
   }, [currentPage, itemsPerPage, schools])
 
-  if (loading) return <div className="news-loading">Loading schools...</div>
-  if (error) return <div className="no-news">No schools found</div>
-  if (!schools || schools.length === 0) return <div className="no-news">No schools found</div>
+  if (loading) return <DataState icon="fa-school">Loading schools...</DataState>
+  if (error) return <DataState icon="fa-school">No schools found</DataState>
+  if (!schools || schools.length === 0) return <DataState icon="fa-school">No schools found</DataState>
 
   const totalPages = Math.ceil(schools.length / itemsPerPage)
   const displayed = schools.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
@@ -91,7 +94,12 @@ export default function SchoolsListClient({ apiBase }: { apiBase: string }) {
               </div>
               <div className="school-card-body">
                 <h3>{s.name}</h3>
-                <p>{s.location}</p>
+                {s.location && (
+                  <p className="school-card-location">
+                    <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span>{s.location}</span>
+                  </p>
+                )}
               </div>
             </a>
           )

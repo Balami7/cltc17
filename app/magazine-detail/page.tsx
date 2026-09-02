@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState, Suspense } from 'react'
+import DataState from '@/components/DataState'
+import { cachedFetch } from '@/lib/cachedFetch'
 
 const API_BASE = process.env.NEXT_PUBLIC_CLTC_API_BASE
 
@@ -18,8 +20,7 @@ function MagazineDetailContent() {
       setLoading(false)
       return
     }
-
-    fetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines/${id}`)
+    cachedFetch(`${(API_BASE as string).replace(/\/+$/, '')}/magazines/${id}`)
       .then(res => {
         if (!res.ok) return null
         return res.json()
@@ -39,7 +40,7 @@ function MagazineDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-loading">Loading magazine...</div>
+          <DataState icon="fa-book">Loading magazine...</DataState>
         </div>
       </main>
     )
@@ -49,10 +50,10 @@ function MagazineDetailContent() {
     return (
       <main className="detail-page">
         <div className="detail-container">
-          <div className="detail-not-found">
-            <h2>Magazine not found.</h2>
+          <DataState icon="fa-book">
+            <span>Magazine not found.</span>
             <Link href="/magazine" className="detail-back">← Back to Magazine</Link>
-          </div>
+          </DataState>
         </div>
       </main>
     )
@@ -87,7 +88,7 @@ function MagazineDetailContent() {
 
 export default function MagazineDetail() {
   return (
-    <Suspense fallback={<div className="detail-loading">Loading...</div>}>
+    <Suspense fallback={<DataState icon="fa-book">Loading magazine...</DataState>}>
       <MagazineDetailContent />
     </Suspense>
   )

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import DataState from "./DataState";
+import { cachedFetch } from "@/lib/cachedFetch";
 import Link from "next/link";
 
 export type OnlineCourse = {
@@ -33,7 +35,7 @@ export default function OnlineCoursesListClient({ apiBase }: { apiBase: string }
     setError(null);
 
     const endpoint = `${apiBase.replace(/\/+$/, "")}/public/online-courses`;
-    fetch(endpoint)
+    cachedFetch(endpoint)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -110,9 +112,9 @@ export default function OnlineCoursesListClient({ apiBase }: { apiBase: string }
 
       {/* Loading state */}
       {loading ? (
-        <p className="no-results">Loading online courses...</p>
+        <DataState icon="fa-laptop">Loading online courses...</DataState>
       ) : filteredCourses.length === 0 ? (
-        <p className="no-results">No online courses match your search criteria.</p>
+        <DataState icon="fa-laptop">No online courses match your search criteria.</DataState>
       ) : (
         /* Online Courses Grid */
         <div ref={gridRef} className="online-courses-grid">

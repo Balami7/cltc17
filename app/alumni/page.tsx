@@ -2,6 +2,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import DataState from "@/components/DataState";
+import { cachedFetch } from "@/lib/cachedFetch";
 
 export default function AlumniPage() {
   const [showSuccess, setShowSuccess] = useState(false);
@@ -22,7 +24,7 @@ export default function AlumniPage() {
   const fetchAlumni = (mounted = true) => {
     setLoading(true)
     setError(null)
-    fetch(`${apiBase.replace(/\/+$/, '')}/public/alumni`)
+    cachedFetch(`${apiBase.replace(/\/+$/, '')}/public/alumni`)
       .then((res) => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json()
@@ -154,11 +156,11 @@ export default function AlumniPage() {
 
           <div ref={gridRef} className="alumni-grid">
             {loading ? (
-              <p className="no-results">Loading alumni...</p>
+              <DataState icon="fa-users">Loading alumni...</DataState>
             ) : error ? (
-              <p className="no-results">Alumni not found</p>
+              <DataState icon="fa-users">Alumni not found</DataState>
             ) : filteredAlumni.length === 0 ? (
-              <p className="no-results">Alumni not found</p>
+              <DataState icon="fa-users">Alumni not found</DataState>
             ) : (
               displayedAlumni.map((person, index) => (
                 <div key={`${person.name}-${index}`} className="alumni-card">
