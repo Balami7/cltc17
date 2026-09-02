@@ -11,12 +11,15 @@ export default function Header() {
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+
   const isCoursesActive =
-    pathname === "/all-courses" ||
-    pathname === "/online-courses" ||
-    pathname === "/courses" ||
-    pathname === "/coursecat" ||
-    pathname?.startsWith("/course");
+    isActive("/all-courses") ||
+    isActive("/online-courses") ||
+    isActive("/courses") ||
+    isActive("/coursecat") ||
+    pathname.startsWith("/course");
 
   const handleLinkClick = () => {
     setMenuOpen(false);
@@ -50,11 +53,11 @@ export default function Header() {
         </div>
 
         <nav className="nav-menu">
-          <Link href="/" className={pathname === "/" ? "active" : ""}>HOME</Link>
-          <Link href="/about" className={pathname === "/about" ? "active" : ""}>ABOUT US</Link>
-          <Link href="/procurement" className={pathname === "/procurement" ? "active" : ""}>PROCUREMENT</Link>
-          <Link href="/newsmedia" className={pathname === "/newsmedia" ? "active" : ""}>NEWS & MEDIA</Link>
-          <Link href="/school" className={pathname === "/school" ? "active" : ""}>TRAINING SCHS</Link>
+          <Link href="/" className={isActive("/") ? "active" : ""}>HOME</Link>
+          <Link href="/about" className={isActive("/about") ? "active" : ""}>ABOUT US</Link>
+          <Link href="/procurement" className={isActive("/procurement") ? "active" : ""}>PROCUREMENT</Link>
+          <Link href="/newsmedia" className={isActive("/newsmedia") ? "active" : ""}>NEWS & MEDIA</Link>
+          <Link href="/school" className={isActive("/school") ? "active" : ""}>TRAINING SCHS</Link>
           
           <div
             className={`nav-dropdown ${coursesDropdownOpen ? "open" : ""}`}
@@ -75,23 +78,23 @@ export default function Header() {
               <Link
                 href="/all-courses"
                 onClick={handleLinkClick}
-                className={pathname === "/all-courses" ? "active" : ""}
+                className={isActive("/all-courses") ? "active" : ""}
               >
                 ALL COURSES
               </Link>
               <Link
                 href="/online-courses"
                 onClick={handleLinkClick}
-                className={pathname === "/online-courses" ? "active" : ""}
+                className={isActive("/online-courses") ? "active" : ""}
               >
                 ONLINE COURSES
               </Link>
             </div>
           </div>
 
-          <Link href="/program" className={pathname === "/program" ? "active" : ""}>PROG & EVENT</Link>
-          <Link href="/alumni" className={pathname === "/alumni" ? "active" : ""}>ALUMNI</Link>
-          <Link href="/magazine" className={pathname === "/magazine" ? "active" : ""}>MAGAZINE</Link>
+          <Link href="/program" className={isActive("/program") ? "active" : ""}>PROG & EVENT</Link>
+          <Link href="/alumni" className={isActive("/alumni") ? "active" : ""}>ALUMNI</Link>
+          <Link href="/magazine" className={isActive("/magazine") ? "active" : ""}>MAGAZINE</Link>
           {/*<Link href="/login" className={pathname === "/login" ? "active" : ""}>LOGIN</Link>*/}
         </nav>
 
@@ -118,19 +121,19 @@ export default function Header() {
         </div>
 
         <nav className="mobile-nav">
-          <Link href="/" onClick={handleLinkClick} className={pathname === "/" ? "active" : ""}>
+          <Link href="/" onClick={handleLinkClick} className={isActive("/") ? "active" : ""}>
             HOME
           </Link>
-          <Link href="/about" onClick={handleLinkClick} className={pathname === "/about" ? "active" : ""}>
+          <Link href="/about" onClick={handleLinkClick} className={isActive("/about") ? "active" : ""}>
             ABOUT US
           </Link>
-          <Link href="/procurement" onClick={handleLinkClick} className={pathname === "/procurement" ? "active" : ""}>
+          <Link href="/procurement" onClick={handleLinkClick} className={isActive("/procurement") ? "active" : ""}>
             PROCUREMENT
           </Link>
-          <Link href="/newsmedia" onClick={handleLinkClick} className={pathname === "/newsmedia" ? "active" : ""}>
+          <Link href="/newsmedia" onClick={handleLinkClick} className={isActive("/newsmedia") ? "active" : ""}>
             NEWS & MEDIA
           </Link>
-          <Link href="/school" onClick={handleLinkClick} className={pathname === "/school" ? "active" : ""}>
+          <Link href="/school" onClick={handleLinkClick} className={isActive("/school") ? "active" : ""}>
             TRAINING SCHOOLS
           </Link>
           
@@ -148,14 +151,14 @@ export default function Header() {
                 <Link
                   href="/all-courses"
                   onClick={handleLinkClick}
-                  className={pathname === "/all-courses" ? "active" : ""}
+                  className={isActive("/all-courses") ? "active" : ""}
                 >
                   ALL COURSES
                 </Link>
                 <Link
                   href="/online-courses"
                   onClick={handleLinkClick}
-                  className={pathname === "/online-courses" ? "active" : ""}
+                  className={isActive("/online-courses") ? "active" : ""}
                 >
                   ONLINE COURSES
                 </Link>
@@ -163,13 +166,13 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/program" onClick={handleLinkClick} className={pathname === "/program" ? "active" : ""}>
+          <Link href="/program" onClick={handleLinkClick} className={isActive("/program") ? "active" : ""}>
             PROG & EVENT
           </Link>
-          <Link href="/alumni" onClick={handleLinkClick} className={pathname === "/alumni" ? "active" : ""}>
+          <Link href="/alumni" onClick={handleLinkClick} className={isActive("/alumni") ? "active" : ""}>
             ALUMNI
           </Link>
-          <Link href="/magazine" onClick={handleLinkClick} className={pathname === "/magazine" ? "active" : ""}>
+          <Link href="/magazine" onClick={handleLinkClick} className={isActive("/magazine") ? "active" : ""}>
             MAGAZINE
           </Link>
           {/*<Link href="/login" onClick={handleLinkClick} className={pathname === "/login" ? "active" : ""}>
